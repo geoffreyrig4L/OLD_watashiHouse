@@ -21,7 +21,7 @@ public class UtilisateurProxy {
     public Iterable<Utilisateur> getAllUtilisateurs() {
 
         String baseApiUrl = props.getApiUrl();
-        String getUtilisateursUrl = baseApiUrl + "/employees";
+        String getUtilisateursUrl = baseApiUrl + "/utilisateurs";
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Iterable<Utilisateur>> response = restTemplate.exchange(

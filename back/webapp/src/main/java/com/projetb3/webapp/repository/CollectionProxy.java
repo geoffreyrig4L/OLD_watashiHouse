@@ -21,7 +21,7 @@ public class CollectionProxy {
     public Iterable<Collection> getAllCollections() {
 
         String baseApiUrl = props.getApiUrl();
-        String getCollectionsUrl = baseApiUrl + "/employees";
+        String getCollectionsUrl = baseApiUrl + "/collections";
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Iterable<Collection>> response = restTemplate.exchange(

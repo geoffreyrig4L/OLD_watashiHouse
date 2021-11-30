@@ -22,7 +22,7 @@ public class CarteDePaiementProxy {
     public Iterable<CarteDePaiement> getAllCarteDePaiements() {
 
         String baseApiUrl = props.getApiUrl();
-        String getCarteDePaiementsUrl = baseApiUrl + "/employees";
+        String getCarteDePaiementsUrl = baseApiUrl + "/carte-de-paiements";
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Iterable<CarteDePaiement>> response = restTemplate.exchange(

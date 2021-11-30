@@ -21,7 +21,7 @@ public class ArticleProxy {
     public Iterable<Article> getAllArticles() {
 
         String baseApiUrl = props.getApiUrl();
-        String getArticlesUrl = baseApiUrl + "/employees";
+        String getArticlesUrl = baseApiUrl + "/articles";
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Iterable<Article>> response = restTemplate.exchange(

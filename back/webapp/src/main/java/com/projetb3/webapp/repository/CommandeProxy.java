@@ -21,7 +21,7 @@ public class CommandeProxy {
     public Iterable<Commande> getAllCommandes() {
 
         String baseApiUrl = props.getApiUrl();
-        String getCommandesUrl = baseApiUrl + "/employees";
+        String getCommandesUrl = baseApiUrl + "/commandes";
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Iterable<Commande>> response = restTemplate.exchange(

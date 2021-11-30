@@ -21,7 +21,7 @@ public class CategorieProxy {
     public Iterable<Categorie> getAllCategories() {
 
         String baseApiUrl = props.getApiUrl();
-        String getCategoriesUrl = baseApiUrl + "/employees";
+        String getCategoriesUrl = baseApiUrl + "/categories";
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Iterable<Categorie>> response = restTemplate.exchange(
