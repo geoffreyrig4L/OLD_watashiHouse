@@ -1,4 +1,4 @@
-package com.projetb3.watashi_house.model;
+package com.projetb3.api_watashihouse.model;
 
 import lombok.Data;
 
