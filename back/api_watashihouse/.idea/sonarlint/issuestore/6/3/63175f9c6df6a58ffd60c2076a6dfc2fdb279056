@@ -1,0 +1,5 @@
+
+m	java:S116"SRename this field "id_carte" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áåÈŒûÿÿÿÿ
+t	java:S116"ZRename this field "date_expiration" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸ÃÛ¹úÿÿÿÿ
+Y
+java:S1128"CRemove this unused import 'org.hibernate.annotations.CollectionId'.(Ç±Ö¶

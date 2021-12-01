@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/carteDePaiements")
+@RequestMapping("/cartes-de-paiement")
 public class CarteDePaiementController {
 
     private CarteDePaiementService carteDePaiementService;
