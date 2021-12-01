@@ -8,8 +8,8 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name="Commandes")
-public class Commandes {
+@Table(name="Commande")
+public class Commande {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
