@@ -22,7 +22,7 @@ public class ArticleService {
                 PageRequest.of(
                         page.orElse(0),
                         40,
-                        Sort.Direction.ASC, sortBy.orElse("id")
+                        Sort.Direction.ASC, sortBy.orElse("id_article")
                 )
         );
     }
