@@ -29,10 +29,4 @@ public class CarteDePaiement {
     @Column(name="mois_expiration")
     private int mois_expiration;
 
-    //bi
-    @ManyToOne(
-            cascade = CascadeType.MERGE  //si modification d'une carte , la maj se fera aussi dans la table user
-    )
-    @JoinColumn(name = "id_utilisateur")    //association avec la clé étrangère
-    private Utilisateur utilisateur;
 }

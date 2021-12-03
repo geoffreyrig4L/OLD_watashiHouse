@@ -44,7 +44,7 @@ CREATE TABLE Utilisateur(
 
 insert into Utilisateur values 
 (null, "Madame", "Olivia", "Hamer", "olivia.hamer@gmail.com", "ohamer", "0601010101","31 rue de Victor Hugo 95210 Argenteuil","31 rue de Victor Hugo 95210 Argenteuil","France", "client"),
-(null, "Madame", "Talia", "Zao", "talio.zao@gmail.com", "tzao", "0602020202","45 rue de Marie Curie 77231 Meaux","45 rue de Marie Curie 77231 Meaux","France", "administrateur"),
+(null, "Madame", "Talia", "Zao", "talia.zao@gmail.com", "tzao", "0602020202","45 rue de Marie Curie 77231 Meaux","45 rue de Marie Curie 77231 Meaux","France", "administrateur"),
 (null, "Monsieur", "Helio", "Pinto", "helio.pinto@gmail.com", "hpinto", "0603030303","42 avenue du général de Gaulle 93421 Pantin","42 avenue du général de Gaulle 93421 Pantin", "France", "client"),
 (null, "Monsieur", "Theo", "Monty", "theo.monty@gmail.com", "tmonty", "0604040404","12 rue de Voltaire 94000 Creteil","12 rue de Voltaire 94000 Creteil","France", "administrateur");
 

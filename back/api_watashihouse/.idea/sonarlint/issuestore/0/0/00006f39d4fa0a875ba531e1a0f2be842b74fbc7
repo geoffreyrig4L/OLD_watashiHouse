@@ -1,0 +1,12 @@
+
+c
+java:S1128"ARemove this unused import 'org.springframework.data.domain.Page'.(˜âüÿÿÿÿ8œ¶µ×/
+e
+java:S1128"HRemove this unused import 'org.springframework.data.domain.PageRequest'.(ºêâÚ8œ¶µ×/
+q
+java:S1128"ORemove this unused import 'org.springframework.data.repository.CrudRepository'.(Îê¶¬üÿÿÿÿ8œ¶µ×/
+V
+java:S1128
+"4Remove this unused import 'java.awt.print.Pageable'.(¾Ğıøÿÿÿÿ8œ¶µ×/
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8œ¶µ×/

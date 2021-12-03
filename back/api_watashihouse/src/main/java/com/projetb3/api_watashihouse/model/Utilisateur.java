@@ -41,12 +41,18 @@ public class Utilisateur {
     @Column(name = "adresse_facturation")
     private String adresse_facturation;
 
+    @Column(name = "pays")
+    private String pays;
+
+    /*
+    @Column(name = "type")
+    private String type;
+
+     */
+
     //uni
     @OneToMany(
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            },
+            cascade = CascadeType.MERGE,
             fetch = FetchType.EAGER)
     @JoinColumn(name = "id_utilisateur")
     List<Commande> commandes = new ArrayList<>();
