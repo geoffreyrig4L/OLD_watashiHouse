@@ -19,7 +19,7 @@ public class CarteDePaiement {
     private int id_carte;
 
     @Column(name="numero")
-    private int numero;
+    private String numero;
 
     @Column(name="cvc")
     private int cvc;

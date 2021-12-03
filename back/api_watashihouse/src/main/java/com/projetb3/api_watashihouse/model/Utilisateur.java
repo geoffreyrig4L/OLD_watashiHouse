@@ -11,9 +11,10 @@ import java.util.List;
 @Table(name="Utilisateur")
 public class Utilisateur {
 
+    //affichage par ID ne marche pas
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_utilisateur")
     private int id_utilisateur;
 
     @Column(name = "civilite")
@@ -40,19 +41,25 @@ public class Utilisateur {
     @Column(name = "adresse_facturation")
     private String adresse_facturation;
 
-    @Column(name = "code_postal")
-    private String code_postal;
-
-    //bi
+    //uni
     @OneToMany(
-            mappedBy = "utilisateur"
-    )
-    private List<Commande> commandes = new ArrayList<>();
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            },
+            fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_utilisateur")
+    List<Commande> commandes = new ArrayList<>();
 
-    //bi
+    /* ERROR cannot simultaneously fetch multiple bags
+
+    //uni
     @OneToMany(
-            mappedBy = "utilisateur"
-    )
-    private List<CarteDePaiement> carteDePaiements = new ArrayList<>();
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_utilisateur")
+    List<CarteDePaiement> carteDePaiements = new ArrayList<>();
 
+     */
 }

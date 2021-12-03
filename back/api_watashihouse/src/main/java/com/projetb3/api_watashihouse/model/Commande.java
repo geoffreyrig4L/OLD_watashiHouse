@@ -31,18 +31,6 @@ public class Commande {
     @Column(name="lien_vers")
     private String lien_vers;
 
-    //bi
-    @ManyToOne(
-            cascade = {
-                    CascadeType.PERSIST, //si supression d'un user = on conserve la commande
-                    CascadeType.MERGE //si modification d'un user , la maj se fera aussi dans la table commande
-            },
-            fetch = FetchType.LAZY     //quand on recupere un user, on recupere ses commandes
-    )
-    @JoinColumn(name = "id_utilisateur")    //association avec la clé étrangère
-    private Utilisateur utilisateur;
-
-
     //uni
     @ManyToMany(
             fetch = FetchType.LAZY,  //permet de charger un article à la demande
@@ -57,4 +45,5 @@ public class Commande {
             inverseJoinColumns = @JoinColumn(name = "id_article")
     )
     private List<Article> articles = new ArrayList<>();
+
 }

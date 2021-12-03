@@ -16,7 +16,6 @@ public class Article {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_article")
     private int id_article;
 
     @Column(name="nom")
