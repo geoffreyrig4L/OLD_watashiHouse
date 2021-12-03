@@ -4,7 +4,9 @@ import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -28,4 +30,31 @@ public class Commande {
 
     @Column(name="lien_vers")
     private String lien_vers;
+
+    //bidirectionnelle
+    @ManyToOne(
+            cascade = {
+                    CascadeType.PERSIST, //si supression d'un user = on conserve la commande
+                    CascadeType.MERGE //si modification d'un user , la maj se fera aussi dans la table commande
+            },
+            fetch = FetchType.LAZY     //quand on recupere un user, on recupere ses commandes
+    )
+    @JoinColumn(name = "id_utilisateur")    //association avec la clé étrangère
+    private Utilisateur utilisateur;
+
+
+    //unidirectionnelle
+    @ManyToMany(
+            fetch = FetchType.LAZY,  //permet de charger un article à la demande
+            cascade = {
+                    CascadeType.PERSIST,    //si creation ou modification d'une commande , la maj se fera aussi dans la table contenir
+                    CascadeType.MERGE       // grace a merge aussi
+            }
+    )
+    @JoinTable(
+            name="Contenir",  //on associe la table 'contenir' qui resulte de la CIM
+            joinColumns = @JoinColumn(name = "id_commande"),
+            inverseJoinColumns = @JoinColumn(name = "id_article")
+    )
+    private List<Article> articles = new ArrayList<>();
 }

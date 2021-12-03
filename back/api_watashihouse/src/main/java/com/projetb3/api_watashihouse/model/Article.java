@@ -5,7 +5,9 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -41,4 +43,18 @@ public class Article {
 
     @Column(name="stock")
     private int stock;
+
+    //bidirectionnelle
+    @ManyToMany(
+            mappedBy = "articles"
+    )
+    private List<Categorie> categories = new ArrayList<>();
+
+    //bidirectionnelle
+    @ManyToOne(
+            cascade = CascadeType.ALL
+    )
+    @JoinColumn(name="id_collection")
+    private Collection collection;
+
 }

@@ -149,22 +149,6 @@ insert into appartenir values
 (1,1),(2,2),(3,3);
 
 #------------------------------------------------------------
-# Table: Acheter
-#------------------------------------------------------------
-
-CREATE TABLE Acheter(
-        id_article     Int NOT NULL ,
-        id_utilisateur Int NOT NULL
-	,CONSTRAINT Acheter_PK PRIMARY KEY (id_article,id_utilisateur)
-
-	,CONSTRAINT Acheter_Article_FK FOREIGN KEY (id_article) REFERENCES Article(id_article)
-	,CONSTRAINT Acheter_Utilisateur0_FK FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id_utilisateur)
-)ENGINE=InnoDB;
-
-insert into acheter values 
-(1,1),(1,2),(3,2),(3,3);
-
-#------------------------------------------------------------
 # Table: Contenir
 #------------------------------------------------------------
 

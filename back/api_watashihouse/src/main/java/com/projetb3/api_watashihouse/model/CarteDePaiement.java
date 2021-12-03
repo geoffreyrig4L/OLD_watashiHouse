@@ -4,7 +4,9 @@ import lombok.Data;
 import org.hibernate.annotations.CollectionId;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -25,4 +27,11 @@ public class CarteDePaiement {
     //importation de date =~ probleme
     @Column(name="date_expiration")
     private Date date_expiration;
+
+    //UNIdirectionnelle
+    @ManyToOne(
+            cascade = CascadeType.ALL        //si suppression d'un utilisateur , on supprime les carte
+    )
+    @JoinColumn(name = "id_utilisateur")    //association avec la clé étrangère
+    private Utilisateur utilisateur ;
 }
