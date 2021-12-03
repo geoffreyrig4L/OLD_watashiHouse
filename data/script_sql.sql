@@ -30,8 +30,8 @@ insert into categorie values
 CREATE TABLE Utilisateur(
         id_utilisateur      Int  Auto_increment  NOT NULL ,
         civilite            Varchar (20) NOT NULL ,
-        nom                 Varchar (30) NOT NULL ,
-        prenom              Varchar (30) NOT NULL ,
+        prenom                 Varchar (30) NOT NULL ,
+        nom              Varchar (30) NOT NULL ,
         email               Varchar (50) NOT NULL ,
         mdp                 Varchar (50) NOT NULL ,
         tel                 Varchar (10) NOT NULL ,
@@ -56,8 +56,8 @@ CREATE TABLE Carte_de_paiement(
         id_carte         Int  Auto_increment  NOT NULL ,
         numero           Varchar(16) NOT NULL ,
         cvc              Int NOT NULL ,
-        annee_expiration  Varchar(2) NOT NULL ,
-        mois_expiration  Varchar(2) NOT NULL ,
+        annee_expiration  Int(2) NOT NULL ,
+        mois_expiration  Int(2) NOT NULL ,
         id_utilisateur   Int NOT NULL
 	,CONSTRAINT Carte_de_paiement_PK PRIMARY KEY (id_carte)
 
@@ -65,14 +65,14 @@ CREATE TABLE Carte_de_paiement(
 )ENGINE=InnoDB;
 
 insert into Carte_de_paiement values 
-(null, "4973665498093456" , 312, "24","09", 1),
-(null, "4973776708071242" , 555, "25","10", 1),
-(null, "4973653474413496" , 985, "23","07", 2),
-(null, "4973351111214976" , 182, "22","02", 2);
+(null, "4973665498093456" , 312, 24,09, 1),
+(null, "4973776708071242" , 555, 25,10, 1),
+(null, "4973653474413496" , 985, 23,07, 2),
+(null, "4973351111214976" , 182, 22,02, 2);
 
 
 #------------------------------------------------------------
-# Table: Commandes
+# Table: Commande
 #------------------------------------------------------------
 
 CREATE TABLE Commande(

@@ -15,7 +15,6 @@ public class CarteDePaiement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_carte")
     private int id_carte;
 
     @Column(name="numero")

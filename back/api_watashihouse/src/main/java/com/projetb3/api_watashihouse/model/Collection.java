@@ -15,7 +15,6 @@ public class Collection {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_collection")
     private int id_collection;
 
     @Column(name="nom")

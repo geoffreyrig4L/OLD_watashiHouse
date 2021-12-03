@@ -15,7 +15,6 @@ public class Commande {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_commande")
     private int id_commande;
 
     @Column(name="numero")
@@ -30,6 +29,8 @@ public class Commande {
 
     @Column(name="lien_vers")
     private String lien_vers;
+
+    /* ERROR nb_avis , j ai checké j'ai trouvé nb_avis nul part
 
     //uni
     @ManyToMany(
@@ -46,4 +47,5 @@ public class Commande {
     )
     private List<Article> articles = new ArrayList<>();
 
+     */
 }
