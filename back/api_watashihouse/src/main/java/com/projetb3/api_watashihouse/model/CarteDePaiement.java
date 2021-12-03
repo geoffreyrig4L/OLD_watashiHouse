@@ -24,14 +24,16 @@ public class CarteDePaiement {
     @Column(name="cvc")
     private int cvc;
 
-    //importation de date =~ probleme
-    @Column(name="date_expiration")
-    private Date date_expiration;
+    @Column(name="annee_expiration")
+    private int annee_expiration;
 
-    //UNIdirectionnelle
+    @Column(name="mois_expiration")
+    private int mois_expiration;
+
+    //bi
     @ManyToOne(
-            cascade = CascadeType.ALL        //si suppression d'un utilisateur , on supprime les carte
+            cascade = CascadeType.MERGE  //si modification d'une carte , la maj se fera aussi dans la table user
     )
     @JoinColumn(name = "id_utilisateur")    //association avec la clé étrangère
-    private Utilisateur utilisateur ;
+    private Utilisateur utilisateur;
 }

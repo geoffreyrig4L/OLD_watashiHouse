@@ -31,7 +31,7 @@ public class Commande {
     @Column(name="lien_vers")
     private String lien_vers;
 
-    //bidirectionnelle
+    //bi
     @ManyToOne(
             cascade = {
                     CascadeType.PERSIST, //si supression d'un user = on conserve la commande
@@ -43,12 +43,12 @@ public class Commande {
     private Utilisateur utilisateur;
 
 
-    //unidirectionnelle
+    //uni
     @ManyToMany(
             fetch = FetchType.LAZY,  //permet de charger un article à la demande
             cascade = {
-                    CascadeType.PERSIST,    //si creation ou modification d'une commande , la maj se fera aussi dans la table contenir
-                    CascadeType.MERGE       // grace a merge aussi
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
             }
     )
     @JoinTable(

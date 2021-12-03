@@ -44,16 +44,14 @@ public class Article {
     @Column(name="stock")
     private int stock;
 
-    //bidirectionnelle
+    //bi
     @ManyToMany(
             mappedBy = "articles"
     )
     private List<Categorie> categories = new ArrayList<>();
 
-    //bidirectionnelle
-    @ManyToOne(
-            cascade = CascadeType.ALL
-    )
+    //bi
+    @ManyToOne
     @JoinColumn(name="id_collection")
     private Collection collection;
 

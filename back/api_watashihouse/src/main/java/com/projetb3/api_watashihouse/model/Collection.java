@@ -21,14 +21,13 @@ public class Collection {
     @Column(name="nom")
     private String nom;
 
-    //bidirectionnelle
+    //bi
     @OneToMany(
-            cascade = CascadeType.ALL, //si suppression ou modification d'un article , la maj se fera ici également
-            orphanRemoval = true,       //evite la presence d'un article dont la collection a été supprimé
-            fetch = FetchType.EAGER     //quand on recupere une collection, on recupere l'article
+            mappedBy = "collection",
+            orphanRemoval = true,       //garantit la non existence d article orphelin de sa collection
+            cascade = CascadeType.ALL,  //toutes les actions sur l’entité collection seront propagées sur l’entité article
+            fetch = FetchType.EAGER     //quand on recupere une collection, on recupere les articles
     )
-    @JoinColumn(name = "id_article")    //association avec la clé étrangère
     private List<Article> articles = new ArrayList<>();
-
 
 }

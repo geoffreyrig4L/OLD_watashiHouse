@@ -20,13 +20,10 @@ public class Categorie {
     @Column(name="nom")
     private String nom;
 
-    //bidirectionnelle
+    //bi
     @ManyToMany(
-            fetch = FetchType.LAZY,  //permet de charger un article à la demande
-            cascade = {
-                    CascadeType.PERSIST,    //si creation ou modification d'une categorie , la maj se fera aussi dans la table article
-                    CascadeType.MERGE       // grace a merge aussi
-            }
+            fetch = FetchType.LAZY,         //permet de charger un article à la demande
+            cascade = CascadeType.MERGE       //si modification d'une commande , la maj se fera aussi sur l'article
     )
     @JoinTable(
             name="Appartenir",  //on associe la table 'appartenir' qui resulte de la CIM
