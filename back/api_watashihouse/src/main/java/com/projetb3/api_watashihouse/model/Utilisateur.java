@@ -4,7 +4,9 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -44,20 +46,15 @@ public class Utilisateur {
     @Column(name = "pays")
     private String pays;
 
-    /*
-    @Column(name = "type")
+    @Column(name = "type_user")
     private String type;
-
-     */
 
     //uni
     @OneToMany(
             cascade = CascadeType.MERGE,
             fetch = FetchType.EAGER)
     @JoinColumn(name = "id_utilisateur")
-    List<Commande> commandes = new ArrayList<>();
-
-    /* ERROR cannot simultaneously fetch multiple bags
+    Set<Commande> commandes = new HashSet<>();
 
     //uni
     @OneToMany(
@@ -65,7 +62,5 @@ public class Utilisateur {
             orphanRemoval = true,
             fetch = FetchType.EAGER)
     @JoinColumn(name = "id_utilisateur")
-    List<CarteDePaiement> carteDePaiements = new ArrayList<>();
-
-     */
+    Set<CarteDePaiement> carteDePaiements = new  HashSet<>();
 }

@@ -38,7 +38,7 @@ CREATE TABLE Utilisateur(
         adresse_livraison   Varchar (200) NOT NULL ,
         adresse_facturation Varchar (200) NOT NULL ,
         pays                    Varchar (20)NOT NULL,
-        type                Enum ("client","administrateur") NOT NULL
+        type_user                Varchar (20) NOT NULL
 	,CONSTRAINT Utilisateur_PK PRIMARY KEY (id_utilisateur)
 )ENGINE=InnoDB;
 
@@ -118,7 +118,7 @@ CREATE TABLE Article(
         images        Varchar (500) NOT NULL ,
         couleur       Varchar (30) NOT NULL ,
         prix          Float NOT NULL ,
-        nbAvis        Int (5) NOT NULL ,
+        nb_avis        Int (5) NOT NULL ,
         note          Float NOT NULL,
         stock         Int (3) NOT NULL ,
         id_collection Int NOT NULL

@@ -19,14 +19,14 @@ public class Article {
     private int id_article;
 
     @Column(name="nom")
-    private int nom;
+    private String nom;
 
     @Column(name="description")
     private String description;
 
     //potentiel pb de type
     @Column(name="images")
-    private int images;
+    private String images;
 
     @Column(name="couleur")
     private String couleur;
@@ -34,8 +34,8 @@ public class Article {
     @Column(name="prix")
     private float prix;
 
-    @Column(name="nbAvis")
-    private int nbAvis;
+    @Column(name="nb_avis")
+    private int nb_avis;
 
     @Column(name="note")
     private int note;
@@ -43,14 +43,22 @@ public class Article {
     @Column(name="stock")
     private int stock;
 
-    //bi
     @ManyToMany(
-            mappedBy = "articles"
+            fetch = FetchType.EAGER,         //quand on recupere une article, on recupere la categorie
+            cascade = CascadeType.MERGE       //si modification d'un article , la maj se fera aussi sur la categorie
+    )
+    @JoinTable(
+            name="Appartenir",  //on associe la table 'appartenir' qui resulte de la CIM
+            joinColumns = @JoinColumn(name = "id_article"),
+            inverseJoinColumns = @JoinColumn(name = "id_categorie")
     )
     private List<Categorie> categories = new ArrayList<>();
 
-    //bi
-    @ManyToOne
+    //uni
+    @ManyToOne(
+        cascade = CascadeType.ALL,  //toutes les actions sur l’entité article seront propagées sur l’entité collection
+        fetch = FetchType.EAGER     //quand on recupere une article, on recupere une collection
+    )
     @JoinColumn(name="id_collection")
     private Collection collection;
 

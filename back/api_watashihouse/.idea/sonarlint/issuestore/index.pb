@@ -23,12 +23,8 @@ Osrc/main/java/com/projetb3/api_watashihouse/repository/CategorieRepository.java
 Usrc/main/java/com/projetb3/api_watashihouse/controller/CarteDePaiementController.java,5\0\5009855a2a28886c54b999c78af857d7ca517a14
 
 Osrc/main/java/com/projetb3/api_watashihouse/service/CarteDePaiementService.java,b\d\bd4927e1946427de2d30e00d286c53f2f1849751
-x
-Hsrc/main/java/com/projetb3/api_watashihouse/service/CommandeService.java,0\0\00098c7e3a8743ae2a652e81ea69561ede163b66
 }
 Msrc/main/java/com/projetb3/api_watashihouse/repository/ArticleRepository.java,0\0\00006f39d4fa0a875ba531e1a0f2be842b74fbc7
-~
-Nsrc/main/java/com/projetb3/api_watashihouse/controller/CommandeController.java,e\4\e4441c76033aa0782a3abdec0c4d3f3bb8ff646a
 z
 Jsrc/main/java/com/projetb3/api_watashihouse/service/CollectionService.java,3\d\3dae11ffb729e3a5853c4086ff414728f0c84637
 {
@@ -39,3 +35,7 @@ Ksrc/main/java/com/projetb3/api_watashihouse/service/UtilisateurService.java,8\
 Msrc/main/java/com/projetb3/api_watashihouse/controller/ArticleController.java,2\9\294f7ca5d95d49d78561f2072b6ff87d88214c30
 w
 Gsrc/main/java/com/projetb3/api_watashihouse/service/ArticleService.java,8\e\8e7693cf1edf4517f67e8392c6664277df309d1d
+Y
+)src/test/resources/application.properties,7\5\75fe9d7fbca55a88d01eb60696ec758ea3b4eba0
+R
+"src/test/java/H2TestJpaConfig.java,0\5\05817b5dabde981f8fb559343152ed14d39e953a
