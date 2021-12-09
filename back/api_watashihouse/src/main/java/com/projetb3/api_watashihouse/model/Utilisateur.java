@@ -17,7 +17,7 @@ public class Utilisateur {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_utilisateur;
+    private int id;
 
     @Column(name = "civilite")
     private String civilite;
@@ -47,7 +47,7 @@ public class Utilisateur {
     private String pays;
 
     @Column(name = "type_user")
-    private String type;
+    private String type_user;
 
     //uni
     @OneToMany(

@@ -1,4 +1,4 @@
-package com.projet.api_cineman;
+package com.projetb3.api_watashihouse;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;

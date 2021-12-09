@@ -3,8 +3,6 @@
 Psrc/main/java/com/projetb3/api_watashihouse/repository/CollectionRepository.java,b\9\b9dee55eac8bb57bbdd8fbff1a48b5ca4747d006
 ~
 Nsrc/main/java/com/projetb3/api_watashihouse/repository/CommandeRepository.java,c\1\c10d78975ed2270a9e7a7217ea8cf25709dc0652
-Å
-Qsrc/main/java/com/projetb3/api_watashihouse/repository/UtilisateurRepository.java,8\4\845567c83d9bb29d0b2fc99b90d8df6edf8b0a33
 Ä
 Psrc/main/java/com/projetb3/api_watashihouse/controller/CollectionController.java,4\f\4f9874b65fd093e379cb9290b5a9ff85650ff3a1
 
@@ -13,8 +11,6 @@ y
 Isrc/main/java/com/projetb3/api_watashihouse/service/CategorieService.java,d\8\d8231357f45b91ab42aea1099d386d83a15332d6
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-Å
-Qsrc/main/java/com/projetb3/api_watashihouse/controller/UtilisateurController.java,a\1\a18a94860b11da338d3ba5a25bcdfd123b94af87
 Ö
 Usrc/main/java/com/projetb3/api_watashihouse/repository/CarteDePaiementRepository.java,f\b\fb20c01a6569244b5c10dab28f5ea3334806ecef
 
@@ -29,13 +25,13 @@ z
 Jsrc/main/java/com/projetb3/api_watashihouse/service/CollectionService.java,3\d\3dae11ffb729e3a5853c4086ff414728f0c84637
 {
 Ksrc/main/java/com/projetb3/api_watashihouse/ApiWatashihouseApplication.java,d\2\d2c4d9f0dff6040e67207bd3e081a0a8b18d7407
-{
-Ksrc/main/java/com/projetb3/api_watashihouse/service/UtilisateurService.java,8\b\8bb8a9c091583dd3fe690cdd72872b167d1fe647
 }
 Msrc/main/java/com/projetb3/api_watashihouse/controller/ArticleController.java,2\9\294f7ca5d95d49d78561f2072b6ff87d88214c30
 w
 Gsrc/main/java/com/projetb3/api_watashihouse/service/ArticleService.java,8\e\8e7693cf1edf4517f67e8392c6664277df309d1d
 Y
 )src/test/resources/application.properties,7\5\75fe9d7fbca55a88d01eb60696ec758ea3b4eba0
-R
-"src/test/java/H2TestJpaConfig.java,0\5\05817b5dabde981f8fb559343152ed14d39e953a
+x
+Hsrc/main/java/com/projetb3/api_watashihouse/service/CommandeService.java,0\0\00098c7e3a8743ae2a652e81ea69561ede163b66
+~
+Nsrc/main/java/com/projetb3/api_watashihouse/controller/CommandeController.java,e\4\e4441c76033aa0782a3abdec0c4d3f3bb8ff646a

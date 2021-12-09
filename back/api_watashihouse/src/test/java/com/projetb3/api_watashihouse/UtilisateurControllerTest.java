@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Import;
-import org.springframework.data.domain.*;
 import org.springframework.http.MediaType;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.hamcrest.CoreMatchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -21,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 //@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD) //force le contexte spring boot a etre recharge apres ce test
 //permet ainsi de ne pas creer de conflit apres une suppression   ELLE EST PRESENTE DANS LE H2TestJpaConfig DONT CETTE CLASSE HERITE
-public class UtilisateurControllerTest implements com.projet.api_cineman.H2TestJpaConfig {
+public class UtilisateurControllerTest implements H2TestJpaConfig {
 
     //pour que les tests fonctionnent : il faut que le getAll verifie les titres de tous sauf du dernier et que le delete supprime le dernier
 
@@ -73,16 +70,16 @@ public class UtilisateurControllerTest implements com.projet.api_cineman.H2TestJ
     void should_get_all_utilisateurs() throws Exception{
         mockMvc.perform(get("/utilisateurs?page=0&sortBy=id"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.content[0].nom",is("")))
-                .andExpect(jsonPath("$.content[1].nom",is("")))
-                .andExpect(jsonPath("$.content[2].nom",is("")));
+                .andExpect(jsonPath("$.content[0].nom",is("Hamer")))
+                .andExpect(jsonPath("$.content[1].nom",is("Zhao")))
+                .andExpect(jsonPath("$.content[2].nom",is("Pinto")));
     }
 
     @Test
     void should_get_one_utilisateur() throws Exception{
         mockMvc.perform(get("/utilisateurs/1"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.nom",is("")));
+                .andExpect(jsonPath("$.nom",is("Hamer")));
     }
 
     @Test
@@ -94,15 +91,18 @@ public class UtilisateurControllerTest implements com.projet.api_cineman.H2TestJ
     @Test
     void should_put_one_utilisateur() throws Exception{
         mockMvc.perform(put("/utilisateurs/2")
-                        .content("{\"id_utilisateur\":2,\"nom\":\"}")       //a compléter
+                        .content("{\"id_utilisateur\":2,\"prenom\":\"Olivier\"}")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
+        mockMvc.perform(get("/utilisateurs/2"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.prenom",is("Olivier")));
     }
 
     @Test
     void should_not_put_one_utilisateur() throws Exception{
         mockMvc.perform(put("/utilisateurs/50")
-                        .content("{\"id_utilisateur\":2,\"nom\":\"}")       //a compléter
+                        .content("{\"id_utilisateur\":2,\"nom\":\"}")
                         .contentType(MediaType.APPLICATION_JSON))       //specifie le type de contenu =json
                 .andExpect(status().isBadRequest());        //badRequest comme dans la methode update de utilisateurController
     }
@@ -121,6 +121,4 @@ public class UtilisateurControllerTest implements com.projet.api_cineman.H2TestJ
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest());
     }
-
-    //le delete passait avant du coup ça generait une erreur
 }

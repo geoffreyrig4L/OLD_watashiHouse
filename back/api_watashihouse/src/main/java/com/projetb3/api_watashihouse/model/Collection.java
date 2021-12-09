@@ -15,7 +15,7 @@ public class Collection {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_collection;
+    private int id;
 
     @Column(name="nom")
     private String nom;

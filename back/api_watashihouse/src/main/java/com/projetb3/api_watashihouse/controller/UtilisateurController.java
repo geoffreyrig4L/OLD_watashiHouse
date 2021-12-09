@@ -57,7 +57,6 @@ public class UtilisateurController {
         return ResponseEntity.badRequest().build();
     }
 
-/*
     @PutMapping("/{id}")
     public ResponseEntity<Void> updateUtilisateur(@PathVariable("id") final int id, @RequestBody Utilisateur utilisateur) { //utilisateur contenu dans le body
         Optional<Utilisateur> optUtilisateur = utilisateurService.getUtilisateur(id);  //Optional -> encapsule un objet dont la valeur peut être null
@@ -66,20 +65,54 @@ public class UtilisateurController {
             Utilisateur currentUtilisateur = optUtilisateur.get();
 
             //recupere les variables du utilisateur fourni en parametre pour les manipuler
-            String title = utilisateur.getTitle();
-            String date = utilisateur.getDate_released();
+            int newId = utilisateur.getId();
+            String civilite = utilisateur.getCivilite();
+            String prenom = utilisateur.getPrenom();
+            String nom = utilisateur.getNom();
+            String email = utilisateur.getEmail();
+            String mdp = utilisateur.getMdp();
+            String tel = utilisateur.getTel();
+            String adresse_livraison = utilisateur.getAdresse_livraison();
+            String adresse_facturation = utilisateur.getAdresse_facturation();
+            String pays = utilisateur.getPays();
+            String type_user = utilisateur.getType_user();
+            if (newId != 0) {
+                currentUtilisateur.setId(newId);
+            }
+            if (civilite != null) {
+                currentUtilisateur.setCivilite(civilite);
+            }
+            if (prenom != null) {
+                currentUtilisateur.setPrenom(prenom);
+            }
+            if (nom != null) {
+                currentUtilisateur.setNom(nom);
+            }
+            if (email != null) {
+                currentUtilisateur.setEmail(email);
+            }
+            if (mdp != null) {
+                currentUtilisateur.setMdp(mdp);
+            }
+            if (tel != null) {
+                currentUtilisateur.setTel(tel);
+            }
+            if(adresse_livraison!= null) {
+                currentUtilisateur.setAdresse_livraison(adresse_livraison);
+            }
+            if (adresse_facturation != null) {
+                currentUtilisateur.setAdresse_facturation(adresse_facturation);
+            }
+            if (pays != null) {
+                currentUtilisateur.setPays(pays);
+            }
+            if (type_user != null) {
+                currentUtilisateur.setType_user(type_user);
+            }
 
-            if (title != null) {
-                currentUtilisateur.setTitle(title);
-            }
-            if (date != null) {
-                currentUtilisateur.setDate_released(date);
-            }
             utilisateurService.saveUtilisateur(currentUtilisateur);
             return ResponseEntity.ok().build();
         }
         return ResponseEntity.badRequest().build();
     }
-    */
-
 }
