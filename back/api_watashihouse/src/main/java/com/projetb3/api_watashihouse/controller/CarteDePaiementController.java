@@ -57,7 +57,6 @@ public class CarteDePaiementController {
         return ResponseEntity.badRequest().build();
     }
 
-/*
     @PutMapping("/{id}")
     public ResponseEntity<Void> updateCarteDePaiement(@PathVariable("id") final int id, @RequestBody CarteDePaiement carteDePaiement) { //carteDePaiement contenu dans le body
         Optional<CarteDePaiement> optCarteDePaiement = carteDePaiementService.getCarteDePaiement(id);  //Optional -> encapsule un objet dont la valeur peut être null
@@ -66,20 +65,27 @@ public class CarteDePaiementController {
             CarteDePaiement currentCarteDePaiement = optCarteDePaiement.get();
 
             //recupere les variables du carteDePaiement fourni en parametre pour les manipuler
-            String title = carteDePaiement.getTitle();
-            String date = carteDePaiement.getDate_released();
+            String numero = carteDePaiement.getNumero();
+            int cvc = carteDePaiement.getCvc();
+            int annee_expiration = carteDePaiement.getAnnee_expiration();
+            int mois_expiration = carteDePaiement.getMois_expiration();
 
-            if (title != null) {
-                currentCarteDePaiement.setTitle(title);
+            if (numero != null) {
+                currentCarteDePaiement.setNumero(numero);
             }
-            if (date != null) {
-                currentCarteDePaiement.setDate_released(date);
+            if (cvc != 0) {
+                currentCarteDePaiement.setCvc(cvc);
+            }
+            if (annee_expiration != 0) {
+                currentCarteDePaiement.setAnnee_expiration(annee_expiration);
+            }
+            if (mois_expiration != 0) {
+                currentCarteDePaiement.setMois_expiration(mois_expiration);
             }
             carteDePaiementService.saveCarteDePaiement(currentCarteDePaiement);
             return ResponseEntity.ok().build();
         }
         return ResponseEntity.badRequest().build();
     }
-    */
 
 }

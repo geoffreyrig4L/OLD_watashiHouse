@@ -77,6 +77,27 @@ public class ArticleController {
             if (nom != null) {
                 currentArticle.setNom(nom);
             }
+            if (description != null) {
+                currentArticle.setDescription(description);
+            }
+            if (images != null) {
+                currentArticle.setImages(images);
+            }
+            if (couleur != null) {
+                currentArticle.setCouleur(couleur);
+            }
+            if (prix != 0) {
+                currentArticle.setPrix(prix);
+            }
+            if (nb_avis != 0) {
+                currentArticle.setNb_avis(nb_avis);
+            }
+            if (note != 0) {
+                currentArticle.setNote(note);
+            }
+            if (stock != 0) {
+                currentArticle.setNote(stock);
+            }
             articleService.saveArticle(currentArticle);
             return ResponseEntity.ok().build();
         }

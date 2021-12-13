@@ -57,7 +57,6 @@ public class CommandeController {
         return ResponseEntity.badRequest().build();
     }
 
-/*
     @PutMapping("/{id}")
     public ResponseEntity<Void> updateCommande(@PathVariable("id") final int id, @RequestBody Commande commande) { //commande contenu dans le body
         Optional<Commande> optCommande = commandeService.getCommande(id);  //Optional -> encapsule un objet dont la valeur peut être null
@@ -66,20 +65,27 @@ public class CommandeController {
             Commande currentCommande = optCommande.get();
 
             //recupere les variables du commande fourni en parametre pour les manipuler
-            String title = commande.getTitle();
-            String date = commande.getDate_released();
+            String numero = commande.getNumero();
+            //
+            float prix_tot = commande.getPrix_tot();
+            String lien_vers = commande.getLien_vers();
 
-            if (title != null) {
-                currentCommande.setTitle(title);
+            if (numero != null) {
+                currentCommande.setNumero(numero);
             }
-            if (date != null) {
-                currentCommande.setDate_released(date);
+
+            //
+
+            if (prix_tot != 0) {
+                currentCommande.setPrix_tot(prix_tot);
+            }
+            if (lien_vers != null) {
+                currentCommande.setLien_vers(lien_vers);
             }
             commandeService.saveCommande(currentCommande);
             return ResponseEntity.ok().build();
         }
         return ResponseEntity.badRequest().build();
     }
-    */
 
 }

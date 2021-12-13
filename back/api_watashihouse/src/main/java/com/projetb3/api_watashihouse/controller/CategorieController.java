@@ -57,7 +57,6 @@ public class CategorieController {
         return ResponseEntity.badRequest().build();
     }
 
-/*
     @PutMapping("/{id}")
     public ResponseEntity<Void> updateCategorie(@PathVariable("id") final int id, @RequestBody Categorie categorie) { //categorie contenu dans le body
         Optional<Categorie> optCategorie = categorieService.getCategorie(id);  //Optional -> encapsule un objet dont la valeur peut être null
@@ -66,20 +65,15 @@ public class CategorieController {
             Categorie currentCategorie = optCategorie.get();
 
             //recupere les variables du categorie fourni en parametre pour les manipuler
-            String title = categorie.getTitle();
-            String date = categorie.getDate_released();
+            String nom = categorie.getNom();
 
-            if (title != null) {
-                currentCategorie.setTitle(title);
-            }
-            if (date != null) {
-                currentCategorie.setDate_released(date);
+            if (nom != null) {
+                currentCategorie.setNom(nom);
             }
             categorieService.saveCategorie(currentCategorie);
             return ResponseEntity.ok().build();
         }
         return ResponseEntity.badRequest().build();
     }
-    */
 
 }

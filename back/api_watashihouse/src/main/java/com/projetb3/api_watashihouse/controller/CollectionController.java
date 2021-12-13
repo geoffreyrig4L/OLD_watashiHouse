@@ -57,7 +57,6 @@ public class CollectionController {
         return ResponseEntity.badRequest().build();
     }
 
-/*
     @PutMapping("/{id}")
     public ResponseEntity<Void> updateCollection(@PathVariable("id") final int id, @RequestBody Collection collection) { //collection contenu dans le body
         Optional<Collection> optCollection = collectionService.getCollection(id);  //Optional -> encapsule un objet dont la valeur peut être null
@@ -66,20 +65,14 @@ public class CollectionController {
             Collection currentCollection = optCollection.get();
 
             //recupere les variables du collection fourni en parametre pour les manipuler
-            String title = collection.getTitle();
-            String date = collection.getDate_released();
+            String nom = collection.getNom();
 
-            if (title != null) {
-                currentCollection.setTitle(title);
-            }
-            if (date != null) {
-                currentCollection.setDate_released(date);
+            if (nom != null) {
+                currentCollection.setNom(nom);
             }
             collectionService.saveCollection(currentCollection);
             return ResponseEntity.ok().build();
         }
         return ResponseEntity.badRequest().build();
     }
-    */
-
 }
