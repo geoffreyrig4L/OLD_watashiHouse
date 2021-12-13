@@ -57,7 +57,6 @@ public class ArticleController {
         return ResponseEntity.badRequest().build();
     }
 
-/*
     @PutMapping("/{id}")
     public ResponseEntity<Void> updateArticle(@PathVariable("id") final int id, @RequestBody Article article) { //article contenu dans le body
         Optional<Article> optArticle = articleService.getArticle(id);  //Optional -> encapsule un objet dont la valeur peut être null
@@ -66,20 +65,22 @@ public class ArticleController {
             Article currentArticle = optArticle.get();
 
             //recupere les variables du article fourni en parametre pour les manipuler
-            String title = article.getTitle();
-            String date = article.getDate_released();
+            String nom = article.getNom();
+            String description = article.getDescription();
+            String images = article.getImages();
+            String couleur = article.getCouleur();
+            float prix = article.getPrix();
+            int nb_avis = article.getNb_avis();
+            float note = article.getNote();
+            int stock = article.getStock();
 
-            if (title != null) {
-                currentArticle.setTitle(title);
-            }
-            if (date != null) {
-                currentArticle.setDate_released(date);
+            if (nom != null) {
+                currentArticle.setNom(nom);
             }
             articleService.saveArticle(currentArticle);
             return ResponseEntity.ok().build();
         }
         return ResponseEntity.badRequest().build();
     }
-    */
 
 }

@@ -25,8 +25,6 @@ z
 Jsrc/main/java/com/projetb3/api_watashihouse/service/CollectionService.java,3\d\3dae11ffb729e3a5853c4086ff414728f0c84637
 {
 Ksrc/main/java/com/projetb3/api_watashihouse/ApiWatashihouseApplication.java,d\2\d2c4d9f0dff6040e67207bd3e081a0a8b18d7407
-}
-Msrc/main/java/com/projetb3/api_watashihouse/controller/ArticleController.java,2\9\294f7ca5d95d49d78561f2072b6ff87d88214c30
 w
 Gsrc/main/java/com/projetb3/api_watashihouse/service/ArticleService.java,8\e\8e7693cf1edf4517f67e8392c6664277df309d1d
 Y
@@ -35,3 +33,17 @@ x
 Hsrc/main/java/com/projetb3/api_watashihouse/service/CommandeService.java,0\0\00098c7e3a8743ae2a652e81ea69561ede163b66
 ~
 Nsrc/main/java/com/projetb3/api_watashihouse/controller/CommandeController.java,e\4\e4441c76033aa0782a3abdec0c4d3f3bb8ff646a
+v
+Fsrc/main/java/com/projetb3/api_watashihouse/model/CarteDePaiement.java,6\3\63175f9c6df6a58ffd60c2076a6dfc2fdb279056
+p
+@src/main/java/com/projetb3/api_watashihouse/model/Categorie.java,f\b\fb8480314b76adbc5c94dac47edfa4daf1c296be
+q
+Asrc/main/java/com/projetb3/api_watashihouse/model/Collection.java,c\e\ce5959f277464d432fb48c46391dc5022d3894a2
+o
+?src/main/java/com/projetb3/api_watashihouse/model/Commande.java,2\8\28e7a998829928466f099dffc73f7bca478425d2
+Å
+Qsrc/main/java/com/projetb3/api_watashihouse/controller/UtilisateurController.java,a\1\a18a94860b11da338d3ba5a25bcdfd123b94af87
+y
+Isrc/test/java/com/projetb3/api_watashihouse/CollectionControllerTest.java,d\7\d7243d4297af3494402f8952a1d49464e632a614
+x
+Hsrc/test/java/com/projetb3/api_watashihouse/CategorieControllerTest.java,0\1\0172198aae36b9f1dfe2983fb3043df71f9492ad

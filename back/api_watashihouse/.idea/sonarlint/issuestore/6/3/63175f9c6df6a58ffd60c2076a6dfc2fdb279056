@@ -1,0 +1,11 @@
+
+w	java:S116"[Rename this field "annee_expiration" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò”å¨8î‰³ƒØ/
+v	java:S116"ZRename this field "mois_expiration" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öƒÚ8î‰³ƒØ/
+`
+java:S1128"CRemove this unused import 'org.hibernate.annotations.CollectionId'.(Ç±Ö¶8ò‰³ƒØ/
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ó‰³ƒØ/
+H
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8ó‰³ƒØ/
+M
+java:S1128	"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ó‰³ƒØ/

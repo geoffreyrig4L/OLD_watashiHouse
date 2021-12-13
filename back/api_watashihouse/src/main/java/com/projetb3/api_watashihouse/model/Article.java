@@ -38,7 +38,7 @@ public class Article {
     private int nb_avis;
 
     @Column(name="note")
-    private int note;
+    private float note;
 
     @Column(name="stock")
     private int stock;

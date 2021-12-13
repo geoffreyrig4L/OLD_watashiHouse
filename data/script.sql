@@ -12,9 +12,9 @@ use watashi_house;
 #------------------------------------------------------------
 
 CREATE TABLE Categorie(
-        id_categorie Int  Auto_increment  NOT NULL ,
+        id Int  Auto_increment  NOT NULL ,
         nom          Varchar (30) NOT NULL
-	,CONSTRAINT Categorie_PK PRIMARY KEY (id_categorie)
+	,CONSTRAINT Categorie_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
 
 
@@ -28,7 +28,7 @@ insert into categorie values
 #------------------------------------------------------------
 
 CREATE TABLE Utilisateur(
-        id_utilisateur      Int  Auto_increment  NOT NULL ,
+        id      Int  Auto_increment  NOT NULL ,
         civilite            Varchar (20) NOT NULL ,
         prenom                 Varchar (30) NOT NULL ,
         nom              Varchar (30) NOT NULL ,
@@ -39,7 +39,7 @@ CREATE TABLE Utilisateur(
         adresse_facturation Varchar (200) NOT NULL ,
         pays                    Varchar (20)NOT NULL,
         type_user                Varchar (20) NOT NULL
-	,CONSTRAINT Utilisateur_PK PRIMARY KEY (id_utilisateur)
+	,CONSTRAINT Utilisateur_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
 
 insert into Utilisateur values 
@@ -53,15 +53,15 @@ insert into Utilisateur values
 #------------------------------------------------------------
 
 CREATE TABLE Carte_de_paiement(
-        id_carte         Int  Auto_increment  NOT NULL ,
+        id         Int  Auto_increment  NOT NULL ,
         numero           Varchar(16) NOT NULL ,
         cvc              Int NOT NULL ,
         annee_expiration  Int(2) NOT NULL ,
         mois_expiration  Int(2) NOT NULL ,
         id_utilisateur   Int NOT NULL
-	,CONSTRAINT Carte_de_paiement_PK PRIMARY KEY (id_carte)
+	,CONSTRAINT Carte_de_paiement_PK PRIMARY KEY (id)
 
-	,CONSTRAINT Carte_de_paiement_Utilisateur_FK FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id_utilisateur)
+	,CONSTRAINT Carte_de_paiement_Utilisateur_FK FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id)
 )ENGINE=InnoDB;
 
 insert into Carte_de_paiement values 
@@ -76,15 +76,15 @@ insert into Carte_de_paiement values
 #------------------------------------------------------------
 
 CREATE TABLE Commande(
-        id_commande    Int  Auto_increment  NOT NULL ,
+        id    Int  Auto_increment  NOT NULL ,
         numero         Varchar (10) NOT NULL ,
         date_livraison Date NOT NULL ,
         prix_tot       Float NOT NULL ,
         lien_vers      Varchar (150) NOT NULL ,
         id_utilisateur Int NOT NULL
-	,CONSTRAINT Commandes_PK PRIMARY KEY (id_commande)
+	,CONSTRAINT Commandes_PK PRIMARY KEY (id)
 
-	,CONSTRAINT Commandes_Utilisateur_FK FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id_utilisateur)
+	,CONSTRAINT Commandes_Utilisateur_FK FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id)
 )ENGINE=InnoDB;
 
 insert into commande values 
@@ -97,14 +97,14 @@ insert into commande values
 #------------------------------------------------------------
 
 CREATE TABLE Collection(
-        id_collection Int  Auto_increment  NOT NULL ,
+        id Int  Auto_increment  NOT NULL ,
         nom           Varchar (30) NOT NULL
-	,CONSTRAINT Collection_PK PRIMARY KEY (id_collection)
+	,CONSTRAINT Collection_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
 
 insert into collection values 
 (null, "WatSakura no hana"),         /*fleur de cerisier*/
-(null, "Hōken");                     /*japon féodal*/
+(null, "Hoken");                     /*japon féodal*/
 
 
 #------------------------------------------------------------
@@ -112,7 +112,7 @@ insert into collection values
 #------------------------------------------------------------
 
 CREATE TABLE Article(
-        id_article    Int  Auto_increment  NOT NULL ,
+        id    Int  Auto_increment  NOT NULL ,
         nom           Varchar (100) NOT NULL ,
         description   Varchar (500) NOT NULL ,
         images        Varchar (500) NOT NULL ,
@@ -122,9 +122,9 @@ CREATE TABLE Article(
         note          Float NOT NULL,
         stock         Int (3) NOT NULL ,
         id_collection Int NOT NULL
-	,CONSTRAINT Article_PK PRIMARY KEY (id_article)
+	,CONSTRAINT Article_PK PRIMARY KEY (id)
 
-	,CONSTRAINT Article_Collection_FK FOREIGN KEY (id_collection) REFERENCES Collection(id_collection)
+	,CONSTRAINT Article_Collection_FK FOREIGN KEY (id_collection) REFERENCES Collection(id)
 )ENGINE=InnoDB;
 
 insert into Article values 
@@ -141,8 +141,8 @@ CREATE TABLE Appartenir(
         id_categorie Int NOT NULL
 	,CONSTRAINT Appartenir_PK PRIMARY KEY (id_article,id_categorie)
 
-	,CONSTRAINT Appartenir_Article_FK FOREIGN KEY (id_article) REFERENCES Article(id_article)
-	,CONSTRAINT Appartenir_Categorie0_FK FOREIGN KEY (id_categorie) REFERENCES Categorie(id_categorie)
+	,CONSTRAINT Appartenir_Article_FK FOREIGN KEY (id_article) REFERENCES Article(id)
+	,CONSTRAINT Appartenir_Categorie0_FK FOREIGN KEY (id_categorie) REFERENCES Categorie(id)
 )ENGINE=InnoDB;
 
 insert into appartenir values 
@@ -157,8 +157,8 @@ CREATE TABLE Contenir(
         id_commande Int NOT NULL
 	,CONSTRAINT Contenir_PK PRIMARY KEY (id_article,id_commande)
 
-	,CONSTRAINT Contenir_Article_FK FOREIGN KEY (id_article) REFERENCES Article(id_article)
-	,CONSTRAINT Contenir_Commande0_FK FOREIGN KEY (id_commande) REFERENCES Commande(id_commande)
+	,CONSTRAINT Contenir_Article_FK FOREIGN KEY (id_article) REFERENCES Article(id)
+	,CONSTRAINT Contenir_Commande0_FK FOREIGN KEY (id_commande) REFERENCES Commande(id)
 )ENGINE=InnoDB;
 
 insert into contenir values 
