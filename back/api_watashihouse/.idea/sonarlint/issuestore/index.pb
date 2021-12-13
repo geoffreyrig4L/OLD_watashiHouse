@@ -31,10 +31,6 @@ q
 Asrc/main/java/com/projetb3/api_watashihouse/model/Collection.java,c\e\ce5959f277464d432fb48c46391dc5022d3894a2
 
 Qsrc/main/java/com/projetb3/api_watashihouse/controller/UtilisateurController.java,a\1\a18a94860b11da338d3ba5a25bcdfd123b94af87
-y
-Isrc/test/java/com/projetb3/api_watashihouse/CollectionControllerTest.java,d\7\d7243d4297af3494402f8952a1d49464e632a614
-x
-Hsrc/test/java/com/projetb3/api_watashihouse/CategorieControllerTest.java,0\1\0172198aae36b9f1dfe2983fb3043df71f9492ad
 n
 >src/main/java/com/projetb3/api_watashihouse/model/Article.java,a\c\ace33a15dc67d33a28b7b5e08bf68df566e1ba52
 }

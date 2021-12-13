@@ -21,13 +21,13 @@ public class CarteDePaiement {
     private String numero;
 
     @Column(name="cvc")
-    private int cvc;
+    private String cvc;
 
     @Column(name="annee_expiration")
-    private int annee_expiration;
+    private String annee_expiration;
 
     @Column(name="mois_expiration")
-    private int mois_expiration;
+    private String mois_expiration;
 
 
 }

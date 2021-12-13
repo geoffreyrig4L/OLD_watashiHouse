@@ -66,20 +66,20 @@ public class CarteDePaiementController {
 
             //recupere les variables du carteDePaiement fourni en parametre pour les manipuler
             String numero = carteDePaiement.getNumero();
-            int cvc = carteDePaiement.getCvc();
-            int annee_expiration = carteDePaiement.getAnnee_expiration();
-            int mois_expiration = carteDePaiement.getMois_expiration();
+            String cvc = carteDePaiement.getCvc();
+            String annee_expiration = carteDePaiement.getAnnee_expiration();
+            String mois_expiration = carteDePaiement.getMois_expiration();
 
             if (numero != null) {
                 currentCarteDePaiement.setNumero(numero);
             }
-            if (cvc != 0) {
+            if (cvc != null) {
                 currentCarteDePaiement.setCvc(cvc);
             }
-            if (annee_expiration != 0) {
+            if (annee_expiration != null) {
                 currentCarteDePaiement.setAnnee_expiration(annee_expiration);
             }
-            if (mois_expiration != 0) {
+            if (mois_expiration != null) {
                 currentCarteDePaiement.setMois_expiration(mois_expiration);
             }
             carteDePaiementService.saveCarteDePaiement(currentCarteDePaiement);
