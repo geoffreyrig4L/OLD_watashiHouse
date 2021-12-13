@@ -4,6 +4,8 @@ import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -20,7 +22,6 @@ public class Commande {
     @Column(name="numero")
     private String numero;
 
-    //importation de date =~ probleme
     @Column(name="date_livraison")
     private Date date_livraison;
 
@@ -44,5 +45,16 @@ public class Commande {
             inverseJoinColumns = @JoinColumn(name = "id_article")
     )
     private List<Article> articles = new ArrayList<>();
+
+    public Date parseDate_livraison(String date_livraison) throws ParseException {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
+        Date formattedDate = new Date();
+        try {
+            formattedDate = formatter.parse(date_livraison.replace("T", " "));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return formattedDate;
+    }
 
 }
