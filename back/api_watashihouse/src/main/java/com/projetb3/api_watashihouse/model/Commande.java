@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -23,7 +25,7 @@ public class Commande {
     private String numero;
 
     @Column(name="date_livraison")
-    private Date date_livraison;
+    private String date_livraison;
 
     @Column(name="prix_tot")
     private float prix_tot;
@@ -46,15 +48,9 @@ public class Commande {
     )
     private List<Article> articles = new ArrayList<>();
 
-    public Date parseDate_livraison(String date_livraison) throws ParseException {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
-        Date formattedDate = new Date();
-        try {
-            formattedDate = formatter.parse(date_livraison.replace("T", " "));
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return formattedDate;
+    public static void generateDate(){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        LocalDateTime date = LocalDateTime.now();
+        String strDate = formatter.format(date);
     }
-
 }

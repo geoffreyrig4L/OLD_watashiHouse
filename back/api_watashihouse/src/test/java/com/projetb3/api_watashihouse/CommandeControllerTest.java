@@ -2,6 +2,7 @@ package com.projetb3.api_watashihouse;
 
 import com.projetb3.api_watashihouse.model.Commande;
 import com.projetb3.api_watashihouse.repository.CommandeRepository;
+import org.apache.tomcat.jni.Local;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,10 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -33,28 +38,34 @@ public class CommandeControllerTest implements H2TestJpaConfig {
     public CommandeRepository commandeRepository;
 
     @BeforeEach  // s execute avant chaque methode de test
-    void insertInH2() throws ParseException {
+    void insertInH2(){
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+
         //les id sont generes automatiquements meme si on les modifies avec @GeneratedValue
         Commande commande = new Commande();
         commande.setNumero("1234567890");
-        Date formattedDate = commande.parseDate_livraison("31-11-2021 23:00:00");
-        commande.setDate_livraison(formattedDate);
+        LocalDateTime date = LocalDateTime.now();
+        String strDate = formatter.format(date);
+        commande.setDate_livraison(strDate);
         commande.setPrix_tot(200.0F);
         commande.setLien_vers("https://www.watashi_house.com/commandes/1");
         commandeRepository.save(commande);
         Commande commande2 = new Commande();
         commande2.setNumero("0987654321");
-        Date formattedDate2 = commande2.parseDate_livraison("03-12-2021 22:30:00");
-        commande2.setDate_livraison(formattedDate2);
+        LocalDateTime date2 = LocalDateTime.now();
+        String strDate2 = formatter.format(date2);
+        commande2.setDate_livraison(strDate2);
         commande2.setPrix_tot(300.0F);
-        commande2.setLien_vers("https://www.watashi_house.com/commandes/2");
+        commande.setLien_vers("https://www.watashi_house.com/commandes/2");
         commandeRepository.save(commande2);
         Commande commande3 = new Commande();
-        commande3.setNumero("111333555999");
-        Date formattedDate3 = commande3.parseDate_livraison("05-12-2021 14:45:45");
-        commande3.setDate_livraison(formattedDate3);
+        commande3.setNumero("1114447770");
+        LocalDateTime date3 = LocalDateTime.now();
+        String strDate3 = formatter.format(date3);
+        commande3.setDate_livraison(strDate3);
         commande3.setPrix_tot(400.0F);
-        commande3.setLien_vers("https://www.watashi_house.com/commandes/3");
+        commande.setLien_vers("https://www.watashi_house.com/commandes/3");
         commandeRepository.save(commande3);
     }
 
@@ -62,9 +73,9 @@ public class CommandeControllerTest implements H2TestJpaConfig {
     void should_get_all_commandes() throws Exception{
         mockMvc.perform(get("/commandes?page=0&sortBy=id"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.content[0].date_livraison",is("31-11-2021 23:00:00")))
-                .andExpect(jsonPath("$.content[1].date_livraison",is("03-12-2021 22:30:00")))
-                .andExpect(jsonPath("$.content[2].date_livraison",is("05-12-2021 14:45:45")));
+                .andExpect(jsonPath("$.content[0].numero",is("1234567890")))
+                .andExpect(jsonPath("$.content[1].numero",is("0987654321")))
+                .andExpect(jsonPath("$.content[2].numero",is("1114447770")));
     }
 
     @Test
@@ -83,12 +94,12 @@ public class CommandeControllerTest implements H2TestJpaConfig {
     @Test
     void should_put_one_commande() throws Exception{
         mockMvc.perform(put("/commandes/2")
-                        .content("{\"id_commande\":2,\"numero\":\"111111111111\"}")
+                        .content("{\"id_commande\":2,\"date_livraison\":\"31/11/2021 13:45:23\"}")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
         mockMvc.perform(get("/commandes/2"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.numero",is("111111111111")));
+                .andExpect(jsonPath("$.date_livraison",is("31/11/2021 13:45:23")));
     }
 
     @Test

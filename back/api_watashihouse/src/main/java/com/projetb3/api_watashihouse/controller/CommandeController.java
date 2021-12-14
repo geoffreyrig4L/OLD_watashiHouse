@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 @Controller
@@ -66,18 +68,18 @@ public class CommandeController {
 
             //recupere les variables du commande fourni en parametre pour les manipuler
             String numero = commande.getNumero();
-            //
+            String date = commande.getDate_livraison();
             float prix_tot = commande.getPrix_tot();
             String lien_vers = commande.getLien_vers();
 
             if (numero != null) {
                 currentCommande.setNumero(numero);
             }
-
-            //
-
             if (prix_tot != 0) {
                 currentCommande.setPrix_tot(prix_tot);
+            }
+            if (date != null) {
+                currentCommande.setDate_livraison(date);
             }
             if (lien_vers != null) {
                 currentCommande.setLien_vers(lien_vers);
@@ -87,5 +89,4 @@ public class CommandeController {
         }
         return ResponseEntity.badRequest().build();
     }
-
 }
