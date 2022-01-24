@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Watashi House</title>
+    <link rel="stylesheet" href="./styles.css"/>
+    <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+            integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+            crossorigin="anonymous"
+    />
+</head>
+<body>
+<!--Barre de navigation-->
+<nav>
+    </div>
+    <div id="menuToggle">
+        <input type="checkbox"/>
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+            <a href="#">
+                <li>Chaise</li>
+            </a>
+            <a href="#">
+                <li>Canapé</li>
+            </a>
+            <a href="#">
+                <li>Etagère</li>
+            </a>
+            <a href="#">
+                <li>Promotion</li>
+            </a>
+        </ul>
+    </div>
+    <div class="onglets">
+        <p class="link">Produits</p>
+        <p class="link">A la une</p>
+        <p class="link">NEWS</p>
+        <img class="watashiHouse" src="/images/WatashiHouse.jpg"/>
+        <div class="onglets">
+            <form>
+                <input type="search" placeholder="Rechercher"/>
+            </form>
+            <p><i class="fas fa-shopping-cart"></i></p>
+            <p><i class="far fa-user"></i></p>
+        </div>
+</nav>
+<!--Fin de la barre de navigation-->
+
+<!-- Header -->
+<div class="carousel-wrapper">
+    <span id="item-1"></span>
+    <span id="item-2"></span>
+    <span id="item-3"></span>
+    <div class="carousel-item item-1">
+        <a href="#item-3" class="arrow-prev arrow"></a>
+        <a href="#item-2" class="arrow-next arrow"></a>
+    </div>
+
+    <div class="carousel-item item-2">
+        <a href="#item-1" class="arrow-prev arrow"></a>
+        <a href="#item-3" class="arrow-next arrow"></a>
+    </div>
+
+    <div class="carousel-item item-3">
+        <a href="#item-2" class="arrow-prev arrow"></a>
+        <a href="#item-1" class="arrow-next arrow"></a>
+    </div>
+</div>
+<!--Fin du header-->
+
+<!-- Produit -->
+<!--<div>
+    <tr th:if="${articles.empty}">
+        <td colspan="3">Aucun article en base de données</td>
+    </tr>
+    <tr th:each="article : ${articles}">
+        <td><span th:text="${article.nom}"> Nom </span></td>
+        <td><span th:text="${article.lastName}"> Nom </span></td>
+    </tr>
+</div>-->
+
+<section class="main">
+    <div class="cards">
+        <div class="card">
+            <img
+                    src="https://www.ikea.com/global/assets/navigation/images/sofa-beds-10663.jpeg?imwidth=400"
+                    alt=""
+            />
+            <div class="produitHeader">
+                <h4 class="titre">Canapé</h4>
+                <h4 class="price">299€</h4>
+            </div>
+            <div class="produitBody">
+                <p>Canapé en cuire</p>
+            </div>
+        </div>
+        <div class="card">
+            <img
+                    src="https://www.ikea.com/global/assets/navigation/images/fabric-sofas-10661.jpeg?imwidth=400"
+                    alt=""
+            />
+            <div class="produitHeader">
+                <h4 class="titre">Canapé</h4>
+                <h4 class="price">299€</h4>
+            </div>
+            <div class="produitBody">
+                <p>Canapé en cuire</p>
+            </div>
+        </div>
+        <div class="card">
+            <img
+                    src="https://www.ikea.com/global/assets/navigation/images/leather-coated-fabric-sofas-10662.jpeg?imwidth=400"
+                    alt=""
+            />
+            <div class="produitHeader">
+                <h4 class="titre">Canapé</h4>
+                <h4 class="price">299€</h4>
+            </div>
+            <div class="produitBody">
+                <p>Canapé en cuire</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Fin du Produit-->
+<footer>
+    <p>Copyright&copy;2021</p>
+    <p>Mentions légales | Contact</p>
+</footer>
+<!--Début du Pied de page-->
+</body>
+</html>

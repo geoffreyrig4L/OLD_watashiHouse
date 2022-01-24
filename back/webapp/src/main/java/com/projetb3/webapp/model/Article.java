@@ -2,6 +2,8 @@ package com.projetb3.webapp.model;
 
 import lombok.Data;
 
+import javax.persistence.Entity;
+
 @Data
 public class Article {
 

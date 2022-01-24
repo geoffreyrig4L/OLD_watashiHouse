@@ -1,0 +1,224 @@
+/* Importation Police d'écriture */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+
+body {
+  font-family: "Oswald", sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Barre de Navigation */
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: white;
+  top: 0;
+  border-bottom: 3px solid black;
+}
+nav .onglets {
+  display: flex;
+  flex-wrap: wrap;
+}
+nav .onglets input {
+  margin: 18px 20px;
+  padding: 5px;
+  border: 2px solid black;
+}
+nav .onglets p {
+  font-size: 17px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+nav .categorie {
+  display: flex;
+  flex-wrap: wrap;
+}
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 20px;
+  left: 0px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: #000000;
+
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: rgb(46, 46, 46);
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0;
+  z-index: 2;
+
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #000000;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  position: absolute;
+  width: 300px;
+  height: 1600px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+  background: #ffffff;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+  border-bottom: 2px solid black;
+}
+
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+.watashiHouse {
+  position: absolute;
+  width: 160px;
+  margin-left: -510px;
+  margin-top: 10px;
+  background-color: white;
+}
+
+h1 {
+  margin-top: 140px;
+  text-align: center;
+}
+.form-style {
+  margin-top: 140px;
+  margin: 10px auto;
+  width: 400px;
+  padding: 20px 12px 10px 20px;
+  font: 14px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.form-style td {
+  padding: 0;
+  display: block;
+  list-style: none;
+  margin: 10px 0 0 0;
+}
+.form-style label {
+  margin: 0 0 3px 0;
+  padding: 0px;
+  display: block;
+  font-weight: bold;
+}
+.form-style .required {
+  color: red;
+}
+.form-style input[type="submit"],
+.form-style input[type="reset"] {
+  background: #4eb5f1;
+  padding: 8px 15px 8px 15px;
+  border: none;
+  color: #fff;
+}
+.form-style input[type="submit"]:hover,
+.form-style input[type="reset"]:hover {
+  background: #4eb5f1;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+.form-style .field-textarea {
+  height: 100px;
+}
+.form-style input[type="text"],
+.form-style input[type="email"],
+textarea {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: 1px solid #bebebe;
+  padding: 7px;
+  margin: 0px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  outline: none;
+}
+.form-style .long {
+  width: 100%;
+}
+.form-style input[type="text"]:focus,
+.form-style input[type="email"]:focus,
+.form-style textarea:focus {
+  -moz-box-shadow: 0 0 8px #88d5e9;
+  -webkit-box-shadow: 0 0 8px #88d5e9;
+  box-shadow: 0 0 8px #88d5e9;
+  border: 1px solid #88d5e9;
+}
+.error {
+  color: #d8000c;
+  background-color: #ffbaba;
+}

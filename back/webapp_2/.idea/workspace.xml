@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b869426a-8fab-4a0d-b50b-f55c9eb11034" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webapp - Copie/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webapp - Copie/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webapp/src/main/java/com/projetb3/webapp/controller/WebAppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api_watashihouse/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../api_watashihouse/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api_watashihouse/.idea/sonarlint/issuestore/0/1/0172198aae36b9f1dfe2983fb3043df71f9492ad" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api_watashihouse/.idea/sonarlint/issuestore/7/5/75fe9d7fbca55a88d01eb60696ec758ea3b4eba0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api_watashihouse/.idea/sonarlint/issuestore/c/c/cc6787200918edb90f812f1b59024b64b608ff8b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api_watashihouse/.idea/sonarlint/issuestore/d/2/d2c4d9f0dff6040e67207bd3e081a0a8b18d7407" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api_watashihouse/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../api_watashihouse/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api_watashihouse/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../api_watashihouse/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api_watashihouse/target/classes/com/projetb3/api_watashihouse/controller/CommandeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../api_watashihouse/target/classes/com/projetb3/api_watashihouse/controller/CommandeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api_watashihouse/target/classes/com/projetb3/api_watashihouse/model/Article.class" beforeDir="false" afterPath="$PROJECT_DIR$/../api_watashihouse/target/classes/com/projetb3/api_watashihouse/model/Article.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api_watashihouse/target/classes/com/projetb3/api_watashihouse/model/Commande.class" beforeDir="false" afterPath="$PROJECT_DIR$/../api_watashihouse/target/classes/com/projetb3/api_watashihouse/model/Commande.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api_watashihouse/target/classes/com/projetb3/api_watashihouse/service/CommandeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../api_watashihouse/target/classes/com/projetb3/api_watashihouse/service/CommandeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/src/main/java/com/projetb3/webapp/CustomProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp/src/main/java/com/projetb3/webapp/CustomProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/src/main/java/com/projetb3/webapp/controller/ControllerWebApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/src/main/java/com/projetb3/webapp/repository/ArticleProxy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/src/main/java/com/projetb3/webapp/repository/CarteDePaiementProxy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/src/main/java/com/projetb3/webapp/repository/CategorieProxy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/src/main/java/com/projetb3/webapp/repository/CollectionProxy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/src/main/java/com/projetb3/webapp/repository/CommandeProxy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/src/main/java/com/projetb3/webapp/repository/UtilisateurProxy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/src/main/java/com/projetb3/webapp/service/ArticleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/src/main/java/com/projetb3/webapp/service/CarteDePaiementService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/src/main/java/com/projetb3/webapp/service/CategorieService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/src/main/java/com/projetb3/webapp/service/CollectionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/src/main/java/com/projetb3/webapp/service/CommandeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/src/main/java/com/projetb3/webapp/service/UtilisateurService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp/src/main/resources/templates/home.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="21dMqsTi3ipnVferbdFQ6DlFnE7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../webapp" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RunManager" selected="Spring Boot.WebappApplication">
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebappApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="webapp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.projetb3.webapp.WebappApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebappApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="webapp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.projetb3.webapp.WebappApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b869426a-8fab-4a0d-b50b-f55c9eb11034" name="Changes" comment="" />
+      <created>1638266705838</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638266705838</updated>
+      <workItem from="1638266707094" duration="755000" />
+      <workItem from="1638277706142" duration="972000" />
+      <workItem from="1638278934325" duration="501000" />
+      <workItem from="1639662323427" duration="1591000" />
+      <workItem from="1643014053627" duration="3375000" />
+      <workItem from="1643029432851" duration="145000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

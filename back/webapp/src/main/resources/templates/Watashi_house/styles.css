@@ -1,0 +1,276 @@
+/* Importation Police d'écriture */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+
+body {
+  font-family: "Oswald", sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Barre de Navigation */
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: white;
+  top: 0;
+  border-bottom: 3px solid black;
+}
+nav .onglets {
+  display: flex;
+  flex-wrap: wrap;
+}
+nav .onglets input {
+  margin: 18px 20px;
+  padding: 5px;
+  border: 2px solid black;
+}
+nav .onglets p {
+  font-size: 17px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+nav .categorie {
+  display: flex;
+  flex-wrap: wrap;
+}
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 20px;
+  left: 0px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: #000000;
+
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: rgb(46, 46, 46);
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0;
+  z-index: 2;
+
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #000000;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  position: absolute;
+  width: 300px;
+  height: 1600px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+  background: #ffffff;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+  border-bottom: 2px solid black;
+}
+
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+.watashiHouse {
+  position: absolute;
+  width: 160px;
+  margin-left: -520px;
+  margin-top: 10px;
+  background-color: white;
+}
+/* Header */
+
+h1 {
+  font-size: 54px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  font-family: "Odibee Sans", cursive;
+  margin-bottom: 0;
+}
+
+#css {
+  color: yellow;
+  font-family: "Odibee Sans", cursive;
+}
+
+.carousel-wrapper {
+  height: 400px;
+  position: relative;
+  width: 800px;
+  display: block;
+  margin: 100px auto;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 50px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 12px;
+}
+.arrow-prev {
+  left: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+}
+.arrow-next {
+  right: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+[id^="item"] {
+  display: none;
+}
+.item-1 {
+  z-index: 2;
+  opacity: 1;
+  background: url("https://img.made.com/image/upload/c_pad,d_madeplusgrey.svg,f_auto,w_982,dpr_2.0,q_auto:good,b_rgb:f5f6f4/v4/catalog/product/asset/5/9/1/0/591047f78fbcac1fa07e683cc643c402f839f8b9_SHLPOL006ZAS_UK_Polygon_Shelving_Unit_Ash_ar3_2_LB01_PS.png");
+  background-size: cover;
+}
+.item-2 {
+  background: url("https://media.ma.cuisinella/-/media/bynder/cuisinella/2021/10/26/17/50/cla_chaise_craft/4x3-cla_chaise_craft.ashx?as=1&w=600&rev=e50a4da05b954887bd448bbfe0aa51bd&hash=EFF567D9D0682F524F0C179303E8CCF9");
+  background-size: cover;
+}
+.item-3 {
+  background: url("https://cdn.habitat.fr/thumbnails/product/1159/1159301/box/1000/565/0/F4F4F4/canape-3-places-en-tissu-tresse-gris_1159301.jpg");
+  background-size: cover;
+}
+
+*:target ~ .item-1 {
+  opacity: 0;
+}
+#item-1:target ~ .item-1 {
+  opacity: 1;
+}
+#item-2:target ~ .item-2,
+#item-3:target ~ .item-3 {
+  z-index: 3;
+  opacity: 1;
+}
+
+.main {
+  margin: 20px;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cards .card {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.cards .card img {
+  width: 600px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+.cards .card .produitHeader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cards .card .produitBody p {
+  margin-top: 10px;
+}
+
+/* Pied de page */
+
+footer {
+  margin-top: 20px;
+  border-top: 3px solid black;
+  text-align: center;
+  cursor: pointer;
+}

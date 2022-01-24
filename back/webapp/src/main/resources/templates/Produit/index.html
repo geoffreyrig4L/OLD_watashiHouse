@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watashi House</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+    <body>
+    <!--Barre de navigation-->
+    <nav>
+      </div>
+      <div id="menuToggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+          <a href="#"><li>Chaise</li></a>
+          <a href="#"><li>Canapé</li></a>
+          <a href="#"><li>Etagère</li></a>
+          <a href="#"><li>Promotion</li></a>
+        </ul>
+      </div>
+      <div class="onglets">
+        <p class="link">Produits</p>
+        <p class="link">A la une</p>
+        <p class="link">NEWS</p>
+      <img class="watashiHouse" src="/images/WatashiHouse.jpg" />
+      <div class="onglets">
+        <form>
+          <input type="search" placeholder="Rechercher" />
+        </form>
+        <p> <i class="fa fa-shopping-cart"></i></p>
+        <p><i class="far fa-user"></i></p>
+      </div>
+    </nav>
+    <!--Fin de la barre de navigation-->
+<div class="hero">
+  <div class="row">
+  <div class="col">
+  <div class="slider">
+  <div class="product">
+    <img src="https://medias.maisonsdumonde.com/image/upload/q_auto,f_auto/w_2000/img/canape-lit-3-places-en-velours-vert-1000-16-15-198168_1.jpg" alt="" onclick="clickme(this)">
+    <img src="https://medias.maisonsdumonde.com/image/upload/q_auto,f_auto/w_1000/img/canape-lit-3-places-en-velours-vert-1000-16-15-198168_4.jpg" alt="" onclick="clickme(this)">
+        </div>
+    <div class="preview">
+    <img src="https://medias.maisonsdumonde.com/image/upload/q_auto,f_auto/w_1000/img/canape-lit-3-places-en-velours-vert-1000-16-15-198168_4.jpg" id="imagebox" alt="">
+         </div>
+      </div>
+    </div>
+     <div class="col">
+      <div class="content">
+      <h2 class="title">Canapé</h2>
+     <h2 class="price">129€</h2>
+     </div>
+  <div class="description">
+ <h4>Canapé en cuire psoghpkfnbfnbkf fkbndf$nbkfn hgdfg;hhflgh,kfghlgh,gphlg,hg,g,g,,ghdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdf
+       </h4>
+     </div>
+<div class="rating">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+ <i class="fa fa-star-half-o"></i>
+   </div>
+    <div class="avis">
+    <h4>(5) Avis</h4>
+    </div>
+    <div class="stock">
+    <h4>10 en stocks</h4>
+        </div>
+          <button type="button">
+         <i class="fa fa-shopping-cart"></i>
+         Ajouté au panier</button>
+
+      </div>
+   </div>
+ </div>
+  <script>
+        function clickme(smallImg) {
+   var fullImg = document.getElementById("imagebox");
+   fullImg.src = smallImg.src;
+   }
+ </script>
+</body> 
