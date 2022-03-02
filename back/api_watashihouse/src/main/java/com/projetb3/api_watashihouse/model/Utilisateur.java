@@ -1,6 +1,10 @@
 package com.projetb3.api_watashihouse.model;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -8,7 +12,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name="Utilisateur")
 public class Utilisateur {
@@ -56,11 +61,13 @@ public class Utilisateur {
     @JoinColumn(name = "id_utilisateur")
     Set<Commande> commandes = new HashSet<>();
 
+    //FetchMode définit comment Hibernate va récupérer les données (par sélection, jointure ou sous-sélection). FetchType, d'autre part, définit si Hibernate chargera les données avec impatience ou paresseusement.
+
     //uni
     @OneToMany(
-            cascade = CascadeType.ALL,
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE},
             orphanRemoval = true,
             fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_utilisateur")
+    @JoinColumn(name = "id_utilisateur", nullable = false)
     Set<CarteDePaiement> carteDePaiements = new  HashSet<>();
 }
