@@ -1,15 +1,9 @@
 package com.projetb3.api_watashihouse.model;
 
-import com.projetb3.api_watashihouse.repository.UtilisateurRepository;
-import lombok.Data;
+
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.CollectionId;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-
 import javax.persistence.*;
-import java.util.*;
 
 @Getter
 @Setter
@@ -33,9 +27,9 @@ public class CarteDePaiement {
     @Column(name="mois_expiration")
     private String mois_expiration;
 
-    @ManyToOne
-    //name = /nom dans la table user/, referencedColumnName=/nom de la FK dans carte/
-    @Fetch(FetchMode.JOIN)
-    @JoinColumn(name="id_utilisateur", referencedColumnName="id", insertable = false, updatable = false)
+    @ManyToOne(
+            cascade = CascadeType.ALL
+    )
+    @JoinColumn(name="id_utilisateur")
     private Utilisateur utilisateur;
 }

@@ -65,9 +65,9 @@ public class Utilisateur {
 
     //uni
     @OneToMany(
-            cascade = {CascadeType.PERSIST, CascadeType.MERGE},
+            cascade = CascadeType.ALL,
             orphanRemoval = true,
-            fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_utilisateur", nullable = false)
-    Set<CarteDePaiement> carteDePaiements = new  HashSet<>();
+            mappedBy = "utilisateur"
+    )
+    Set<CarteDePaiement> carteDePaiements = new HashSet<>();
 }

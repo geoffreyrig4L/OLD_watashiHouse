@@ -1,0 +1,15 @@
+
+v	java:S116."\Rename this field "adresse_livraison" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÊ¨‘úÿÿÿÿ
+x	java:S1161"^Rename this field "adresse_facturation" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÙÅ‹îÿÿÿÿÿ
+n	java:S1167"TRename this field "type_user" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œ­¬Àúÿÿÿÿ
+C
+java:S1128"(Remove this unused import 'lombok.Data'.(÷í«ÿÿÿÿÿ
+W
+java:S1128"<Remove this unused import 'org.hibernate.annotations.Fetch'.(”” ìşÿÿÿÿ
+V
+java:S1128"@Remove this unused import 'org.hibernate.annotations.FetchMode'.(‹ğ‡¬
+F
+java:S1128
+"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
+F
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
