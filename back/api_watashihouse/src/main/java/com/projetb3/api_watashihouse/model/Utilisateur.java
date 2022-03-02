@@ -15,7 +15,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Table(name="Utilisateur")
+@Table(name = "Utilisateur")
 public class Utilisateur {
 
     //affichage par ID ne marche pas
@@ -65,9 +65,15 @@ public class Utilisateur {
 
     //uni
     @OneToMany(
-            cascade = CascadeType.ALL,
+            cascade = CascadeType.MERGE,
             orphanRemoval = true,
             mappedBy = "utilisateur"
     )
-    Set<CarteDePaiement> carteDePaiements = new HashSet<>();
+    List<CarteDePaiement> carteDePaiements = new ArrayList<>();
+
+
+    public void add(CarteDePaiement carte) {
+        carteDePaiements.add(carte);
+        carte.setUtilisateur(this);
+    }
 }

@@ -1,6 +1,7 @@
 package com.projetb3.api_watashihouse.service;
 
 import com.projetb3.api_watashihouse.model.CarteDePaiement;
+import com.projetb3.api_watashihouse.model.Utilisateur;
 import com.projetb3.api_watashihouse.repository.CarteDePaiementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -35,6 +36,10 @@ public class CarteDePaiementService {
 
     public CarteDePaiement saveCarteDePaiement(CarteDePaiement carte) {           //creer une instance de la table et genere automatiquement l'id
         CarteDePaiement savedCarteDePaiement = carteRepository.save(carte);
+        Utilisateur utilisateur = carte.getUtilisateur();
+        utilisateur.add(carte);
+        CarteDePaiement carteList = utilisateur.getCarteDePaiements().get(0);
+        System.out.println(carteList.getNumero());
         return savedCarteDePaiement;
     }
 }
