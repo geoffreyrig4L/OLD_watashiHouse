@@ -1,10 +1,7 @@
 package com.projetb3.api_watashihouse.model;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -68,10 +65,11 @@ public class Utilisateur {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    List<CarteDePaiement> carteDePaiements = new ArrayList<>();
+    @JoinColumn(name = "id_utilisateur")
+    List<CarteDePaiement> cartesDePaiement = new ArrayList<>();
 
 
     public void add(CarteDePaiement carte) {
-        carteDePaiements.add(carte);
+        cartesDePaiement.add(carte);
     }
 }

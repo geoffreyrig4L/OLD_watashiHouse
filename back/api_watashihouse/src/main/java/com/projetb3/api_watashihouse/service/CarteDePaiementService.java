@@ -18,6 +18,9 @@ public class CarteDePaiementService {
     @Autowired //injection automatique des données
     private CarteDePaiementRepository carteRepository;
 
+    @Autowired
+    private UtilisateurService utilisateurService;
+
     public Optional<CarteDePaiement> getCarteDePaiement(final int id) {           //Optional -> encapsule un objet dont la valeur peut être null
         return carteRepository.findById(id);
     }
@@ -38,12 +41,12 @@ public class CarteDePaiementService {
 
     public CarteDePaiement saveCarteDePaiement(CarteDePaiement carte){           //creer une instance de la table et genere automatiquement l'id
         CarteDePaiement savedCarteDePaiement = new CarteDePaiement();
-        UtilisateurService utilisateurService = new UtilisateurService();
+        System.out.println(carte.getId_utilisateur());
         Optional<Utilisateur> optional = utilisateurService.getUtilisateur(carte.getId_utilisateur());
         if(optional.isPresent()){
             savedCarteDePaiement = carteRepository.save(carte);
             Utilisateur utilisateur = optional.get();
-            utilisateur.getCarteDePaiements().add(carte);
+            utilisateur.add(carte);
         } else {
             log.error("Veuillez assigner un utilisateur à cette carte.");
         }
