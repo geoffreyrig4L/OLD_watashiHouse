@@ -27,9 +27,6 @@ public class CarteDePaiement {
     @Column(name="mois_expiration")
     private String mois_expiration;
 
-    @ManyToOne(
-            cascade = CascadeType.MERGE
-    )
-    @JoinColumn(name="id_utilisateur")
-    private Utilisateur utilisateur;
+    @Column(name="id_utilisateur")
+    private int id_utilisateur;
 }

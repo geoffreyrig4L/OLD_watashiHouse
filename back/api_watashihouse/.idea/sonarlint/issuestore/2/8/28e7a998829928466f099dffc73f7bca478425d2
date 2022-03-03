@@ -1,0 +1,14 @@
+
+z	java:S116"YRename this field "date_livraison" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ϊθβωÿÿÿÿ8Μƒέτ/
+t	java:S116"SRename this field "prix_tot" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Οƒ¤•ÿÿÿÿÿ8Μƒέτ/
+p	java:S116""TRename this field "lien_vers" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²Ύ¶8Νƒέτ/
+X
+java:S18546";Remove this useless assignment to local variable "strDate".(ϋ΅Ν8Ϋƒέτ/
+I
+java:S14816",Remove this unused "strDate" local variable.(ϋ΅Ν8ήƒέτ/
+R
+java:S1128"5Remove this unused import 'java.text.ParseException'.(ρ®ο•8ίƒέτ/
+T
+java:S1128"7Remove this unused import 'java.text.SimpleDateFormat'.(ϊ΅ΩΫ8ίƒέτ/
+H
+java:S1128"+Remove this unused import 'java.util.Date'.(Έ…Όό8ίƒέτ/

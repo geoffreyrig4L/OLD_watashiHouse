@@ -65,15 +65,13 @@ public class Utilisateur {
 
     //uni
     @OneToMany(
-            cascade = CascadeType.MERGE,
-            orphanRemoval = true,
-            mappedBy = "utilisateur"
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
     )
     List<CarteDePaiement> carteDePaiements = new ArrayList<>();
 
 
     public void add(CarteDePaiement carte) {
         carteDePaiements.add(carte);
-        carte.setUtilisateur(this);
     }
 }
