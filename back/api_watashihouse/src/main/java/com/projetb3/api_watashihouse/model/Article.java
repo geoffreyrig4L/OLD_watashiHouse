@@ -1,6 +1,9 @@
 package com.projetb3.api_watashihouse.model;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,7 +11,8 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name="Article")
 public class Article {
@@ -42,23 +46,24 @@ public class Article {
     @Column(name="stock")
     private int stock;
 
+    @JsonIgnore
     @ManyToMany(
-            fetch = FetchType.EAGER,         //quand on recupere une article, on recupere la categorie
-            cascade = CascadeType.MERGE       //si modification d'un article , la maj se fera aussi sur la categorie
-    )
-    @JoinTable(
-            name="Appartenir",  //on associe la table 'appartenir' qui resulte de la CIM
-            joinColumns = @JoinColumn(name = "id_article"),
-            inverseJoinColumns = @JoinColumn(name = "id_categorie")
+            mappedBy = "articles",
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            },
+            targetEntity = Categorie.class
     )
     private List<Categorie> categories = new ArrayList<>();
 
-    //uni
-    @ManyToOne(
-        cascade = CascadeType.ALL,  //toutes les actions sur l’entité article seront propagées sur l’entité collection
-        fetch = FetchType.EAGER     //quand on recupere une article, on recupere une collection
-    )
-    @JoinColumn(name="id_collection")
-    private Collection collection;
+//    @ManyToOne(
+//            fetch = FetchType.EAGER,
+//            cascade = CascadeType.MERGE,
+//            targetEntity=Collection.class
+//    )
+//    @JoinColumn(name = "id_collection_article")
+//    @JsonBackReference
+//    private Collection collection;
 
 }

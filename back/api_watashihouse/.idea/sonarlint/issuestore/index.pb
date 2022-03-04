@@ -1,6 +1,4 @@
 
-€
-Psrc/main/java/com/projetb3/api_watashihouse/repository/CollectionRepository.java,b\9\b9dee55eac8bb57bbdd8fbff1a48b5ca4747d006
 …
 Usrc/main/java/com/projetb3/api_watashihouse/repository/CarteDePaiementRepository.java,f\b\fb20c01a6569244b5c10dab28f5ea3334806ecef
 y
@@ -11,8 +9,6 @@ z
 Jsrc/test/java/com/projetb3/api_watashihouse/UtilisateurControllerTest.java,4\b\4bc45a5dbec43168f225a5207da9db69d96f9ffc
 p
 @src/test/java/com/projetb3/api_watashihouse/H2TestJpaConfig.java,9\0\900423b588a76f9c7570db4b86a4cddfc98daa12
-n
->src/main/java/com/projetb3/api_watashihouse/model/Article.java,a\c\ace33a15dc67d33a28b7b5e08bf68df566e1ba52
 }
 Msrc/main/java/com/projetb3/api_watashihouse/repository/ArticleRepository.java,0\0\00006f39d4fa0a875ba531e1a0f2be842b74fbc7
 w
@@ -25,25 +21,11 @@ Nsrc/test/java/com/projetb3/api_watashihouse/CarteDePaiementControllerTest.java
 Qsrc/main/java/com/projetb3/api_watashihouse/repository/UtilisateurRepository.java,8\4\845567c83d9bb29d0b2fc99b90d8df6edf8b0a33
 {
 Ksrc/main/java/com/projetb3/api_watashihouse/ApiWatashihouseApplication.java,d\2\d2c4d9f0dff6040e67207bd3e081a0a8b18d7407
-q
-Asrc/main/java/com/projetb3/api_watashihouse/model/Collection.java,c\e\ce5959f277464d432fb48c46391dc5022d3894a2
 
 Osrc/main/java/com/projetb3/api_watashihouse/repository/CategorieRepository.java,e\4\e40bfea0b093a5245cada9a7e47e6ae1aecf313c
-z
-Jsrc/main/java/com/projetb3/api_watashihouse/service/CollectionService.java,3\d\3dae11ffb729e3a5853c4086ff414728f0c84637
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-~
-Nsrc/main/java/com/projetb3/api_watashihouse/controller/CommandeController.java,e\4\e4441c76033aa0782a3abdec0c4d3f3bb8ff646a
 y
 Isrc/main/java/com/projetb3/api_watashihouse/service/CategorieService.java,d\8\d8231357f45b91ab42aea1099d386d83a15332d6
-x
-Hsrc/main/java/com/projetb3/api_watashihouse/service/CommandeService.java,0\0\00098c7e3a8743ae2a652e81ea69561ede163b66
-o
-?src/main/java/com/projetb3/api_watashihouse/model/Commande.java,2\8\28e7a998829928466f099dffc73f7bca478425d2
-€
-Psrc/main/java/com/projetb3/api_watashihouse/controller/CollectionController.java,4\f\4f9874b65fd093e379cb9290b5a9ff85650ff3a1
 
 Osrc/main/java/com/projetb3/api_watashihouse/controller/CategorieController.java,5\2\52e7c1ec2b16ee4e95ae3c13f6128e8daeed9714
-p
-@src/main/java/com/projetb3/api_watashihouse/model/Categorie.java,f\b\fb8480314b76adbc5c94dac47edfa4daf1c296be

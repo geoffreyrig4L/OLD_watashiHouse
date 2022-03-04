@@ -2,7 +2,6 @@ package com.projetb3.api_watashihouse;
 
 import com.projetb3.api_watashihouse.model.Commande;
 import com.projetb3.api_watashihouse.repository.CommandeRepository;
-import org.apache.tomcat.jni.Local;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.text.ParseException;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -47,25 +42,22 @@ public class CommandeControllerTest implements H2TestJpaConfig {
         commande.setNumero("1234567890");
         LocalDateTime date = LocalDateTime.now();
         String strDate = formatter.format(date);
-        commande.setDate_livraison(strDate);
-        commande.setPrix_tot(200.0F);
-        commande.setLien_vers("https://www.watashi_house.com/commandes/1");
+        commande.setDate_achat(strDate);
+        commande.setPrix_tot(2000);
         commandeRepository.save(commande);
         Commande commande2 = new Commande();
         commande2.setNumero("0987654321");
         LocalDateTime date2 = LocalDateTime.now();
         String strDate2 = formatter.format(date2);
-        commande2.setDate_livraison(strDate2);
-        commande2.setPrix_tot(300.0F);
-        commande.setLien_vers("https://www.watashi_house.com/commandes/2");
+        commande2.setDate_achat(strDate2);
+        commande2.setPrix_tot(3000);
         commandeRepository.save(commande2);
         Commande commande3 = new Commande();
         commande3.setNumero("1114447770");
         LocalDateTime date3 = LocalDateTime.now();
         String strDate3 = formatter.format(date3);
-        commande3.setDate_livraison(strDate3);
-        commande3.setPrix_tot(400.0F);
-        commande.setLien_vers("https://www.watashi_house.com/commandes/3");
+        commande3.setDate_achat(strDate3);
+        commande3.setPrix_tot(4000);
         commandeRepository.save(commande3);
     }
 

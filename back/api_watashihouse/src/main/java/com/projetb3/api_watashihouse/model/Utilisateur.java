@@ -54,17 +54,6 @@ public class Utilisateur {
     @Column(name = "type_user")
     private String type_user;
 
-//    //uni
-//    @OneToMany(
-//            cascade = CascadeType.MERGE,
-//            fetch = FetchType.EAGER)
-//    @JoinColumn(name = "id_utilisateur")
-//    Set<Commande> commandes = new HashSet<>();
-
-
-    //FetchMode définit comment Hibernate va récupérer les données
-    // FetchType, d'autre part, définit si Hibernate chargera les données avec impatience ou paresseusement.
-
     @OneToMany(
             targetEntity=CarteDePaiement.class,
             mappedBy = "utilisateur",
@@ -73,5 +62,19 @@ public class Utilisateur {
     )
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonManagedReference
-    List<CarteDePaiement> carteDePaiements = new ArrayList<>();
+    Set<CarteDePaiement> carteDePaiements = new HashSet<>();
+
+    @OneToMany(
+            targetEntity=Commande.class,
+            mappedBy = "utilisateur",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonManagedReference
+    Set<Commande> commandes = new HashSet<>();
+
 }
+
+//FetchMode définit comment Hibernate va récupérer les données
+// FetchType, d'autre part, définit si Hibernate chargera les données avec impatience ou paresseusement.

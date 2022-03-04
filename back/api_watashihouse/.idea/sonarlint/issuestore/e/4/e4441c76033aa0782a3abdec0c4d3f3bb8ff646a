@@ -1,12 +1,0 @@
-
-b
-java:S4684-"@Replace this persistent entity with a simple POJO or DTO object.(İÌ§şÿÿÿÿ8„…ÔÜô/
-]
-java:S4684?"@Replace this persistent entity with a simple POJO or DTO object.(ÕğÎ‹8Š…ÔÜô/
-V
-java:S1128
-"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8…ÔÜô/
-\
-java:S1128"?Remove this unused import 'java.time.format.DateTimeFormatter'.(‰÷÷ª8‘…ÔÜô/
-r	java:S117H"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Şâùÿÿÿÿ8’…ÔÜô/
-m	java:S117I"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñøª©8’…ÔÜô/

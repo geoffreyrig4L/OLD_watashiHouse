@@ -7,8 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 @Controller
@@ -22,28 +20,26 @@ public class CommandeController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<Commande>> getAllCommandesToWatch(@RequestParam("page") final Optional<Integer> page, @RequestParam("sortBy") final Optional<String> sortBy) {
+    public ResponseEntity<Page<Commande>> getAllCommandesToWatch(
+            @RequestParam("page") final Optional<Integer> page,
+            @RequestParam("sortBy") final Optional<String> sortBy
+    ) {
         Page<Commande> commandeList = commandeService.getAllCommandes(page, sortBy);
         return ResponseEntity.ok(commandeList);
     }
 
-    /*
-        @RequestParam recupere des infos concernant les ressources, tout ce qu'on peut trouver apres le ?, ses infos servent principalement de filtrage
-        @PathVariable récupère la ressource directement soit les champs contenu dans notre bdd (id, title, date_released)
-     */
-
     @GetMapping("/{id}")
-    public ResponseEntity<Commande> getCommande(@PathVariable("id") final int id) {     //PathVariable -> permet de manipuler des variables dans l'URI de la requete mapping
-        Optional<Commande> commande = commandeService.getCommande(id); //Optional -> encapsule un objet dont la valeur peut être null
-        if (commande.isPresent()) {   //si il existe dans la bdd
-            return ResponseEntity.ok(commande.get());  //recupere la valeur de commande
+    public ResponseEntity<Commande> getCommande(@PathVariable("id") final int id) {
+        Optional<Commande> commande = commandeService.getCommande(id);
+        if (commande.isPresent()) {
+            return ResponseEntity.ok(commande.get());
         }
         return ResponseEntity.notFound().build();
     }
 
     @PostMapping
-    public ResponseEntity<Void> createCommande(@RequestBody Commande commande) {         // deserialise les JSON dans un langage Java -> regroupe des données séparées dans un meme flux
-        // le JSON saisie par l'user dans le body sera donc utiliser pour générer une instance de Commande
+    public ResponseEntity<Void> createCommande(@RequestBody Commande commande) {
+        commande.setDate_achat(Commande.now());
         commandeService.saveCommande(commande);
         return ResponseEntity.ok().build();
     }
@@ -60,17 +56,13 @@ public class CommandeController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Void> updateCommande(@PathVariable("id") final int id, @RequestBody Commande commande) { //commande contenu dans le body
-        Optional<Commande> optCommande = commandeService.getCommande(id);  //Optional -> encapsule un objet dont la valeur peut être null
-
+    public ResponseEntity<Void> updateCommande(@PathVariable("id") final int id, @RequestBody Commande commande) {
+        Optional<Commande> optCommande = commandeService.getCommande(id);
         if (optCommande.isPresent()) {
             Commande currentCommande = optCommande.get();
-
-            //recupere les variables du commande fourni en parametre pour les manipuler
             String numero = commande.getNumero();
-            String date = commande.getDate_livraison();
-            float prix_tot = commande.getPrix_tot();
-            String lien_vers = commande.getLien_vers();
+            String date = commande.getDate_achat();
+            int prix_tot = commande.getPrix_tot();
 
             if (numero != null) {
                 currentCommande.setNumero(numero);
@@ -79,10 +71,7 @@ public class CommandeController {
                 currentCommande.setPrix_tot(prix_tot);
             }
             if (date != null) {
-                currentCommande.setDate_livraison(date);
-            }
-            if (lien_vers != null) {
-                currentCommande.setLien_vers(lien_vers);
+                currentCommande.setDate_achat(date);
             }
             commandeService.saveCommande(currentCommande);
             return ResponseEntity.ok().build();

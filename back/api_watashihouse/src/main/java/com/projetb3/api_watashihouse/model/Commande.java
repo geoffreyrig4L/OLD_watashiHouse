@@ -1,20 +1,20 @@
 package com.projetb3.api_watashihouse.model;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Entity
-@Table(name="Commande")
+@Table(name="commande")
 public class Commande {
 
     @Id
@@ -24,33 +24,36 @@ public class Commande {
     @Column(name="numero")
     private String numero;
 
-    @Column(name="date_livraison")
-    private String date_livraison;
+    @Column(name="date_achat")
+    private String date_achat;
 
     @Column(name="prix_tot")
-    private float prix_tot;
+    private int prix_tot;
 
-    @Column(name="lien_vers")
-    private String lien_vers;
+    @ManyToOne(
+            cascade = CascadeType.MERGE,
+            targetEntity=Utilisateur.class
+    )
+    @JoinColumn(name="id_utilisateur_commande")
+    @JsonBackReference
+    private Utilisateur utilisateur;
 
-    //uni
     @ManyToMany(
-            fetch = FetchType.LAZY,  //permet de charger un article à la demande
             cascade = {
                     CascadeType.PERSIST,
                     CascadeType.MERGE
             }
     )
     @JoinTable(
-            name="Contenir",  //on associe la table 'contenir' qui resulte de la CIM
+            name="Contenir",
             joinColumns = @JoinColumn(name = "id_commande"),
             inverseJoinColumns = @JoinColumn(name = "id_article")
     )
     private List<Article> articles = new ArrayList<>();
 
-    public static void generateDate(){
+    public static String now(){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         LocalDateTime date = LocalDateTime.now();
-        String strDate = formatter.format(date);
+        return formatter.format(date);
     }
 }
