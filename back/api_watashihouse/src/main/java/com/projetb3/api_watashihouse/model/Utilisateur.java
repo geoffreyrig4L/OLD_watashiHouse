@@ -54,12 +54,13 @@ public class Utilisateur {
     @Column(name = "type_user")
     private String type_user;
 
-    //uni
-    @OneToMany(
-            cascade = CascadeType.MERGE,
-            fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_utilisateur")
-    Set<Commande> commandes = new HashSet<>();
+//    //uni
+//    @OneToMany(
+//            cascade = CascadeType.MERGE,
+//            fetch = FetchType.EAGER)
+//    @JoinColumn(name = "id_utilisateur")
+//    Set<Commande> commandes = new HashSet<>();
+
 
     //FetchMode définit comment Hibernate va récupérer les données
     // FetchType, d'autre part, définit si Hibernate chargera les données avec impatience ou paresseusement.
@@ -67,11 +68,7 @@ public class Utilisateur {
     @OneToMany(
             targetEntity=CarteDePaiement.class,
             mappedBy = "utilisateur",
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE,
-                    CascadeType.REMOVE
-            },
+            cascade = CascadeType.ALL,
             orphanRemoval = true
     )
     @OnDelete(action = OnDeleteAction.CASCADE)
