@@ -33,6 +33,6 @@ public class CarteDePaiement {
             targetEntity=Utilisateur.class
     )
     @JoinColumn(name="id_utilisateur_carte", nullable = false)
-    @JsonBackReference  //pour eviter un appel de user lors du get et donc une boucle infini
+    @JsonBackReference
     private Utilisateur utilisateur;
 }

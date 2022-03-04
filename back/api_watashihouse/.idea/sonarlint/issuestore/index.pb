@@ -11,10 +11,6 @@ p
 @src/test/java/com/projetb3/api_watashihouse/H2TestJpaConfig.java,9\0\900423b588a76f9c7570db4b86a4cddfc98daa12
 }
 Msrc/main/java/com/projetb3/api_watashihouse/repository/ArticleRepository.java,0\0\00006f39d4fa0a875ba531e1a0f2be842b74fbc7
-w
-Gsrc/main/java/com/projetb3/api_watashihouse/service/ArticleService.java,8\e\8e7693cf1edf4517f67e8392c6664277df309d1d
-v
-Fsrc/test/java/com/projetb3/api_watashihouse/ArticleControllerTest.java,c\c\cc6787200918edb90f812f1b59024b64b608ff8b
 ~
 Nsrc/test/java/com/projetb3/api_watashihouse/CarteDePaiementControllerTest.java,f\e\fe6398fb5c4f77bdc998050c1b926f7a40abba7e
 Å

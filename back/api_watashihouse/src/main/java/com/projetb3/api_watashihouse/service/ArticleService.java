@@ -30,7 +30,6 @@ public class ArticleService {
     public void deleteArticle(final int id_article){articleRepository.deleteById(id_article);}
 
     public Article saveArticle(Article article){
-        Article savedArticle = articleRepository.save(article);
-        return savedArticle;
+        return articleRepository.save(article);
     }
 }

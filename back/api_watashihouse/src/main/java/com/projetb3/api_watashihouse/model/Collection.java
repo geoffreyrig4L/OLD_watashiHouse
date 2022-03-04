@@ -21,14 +21,14 @@ public class Collection {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="nom")
+    @Column(name="nom_collection")
     private String nom;
 
     @OneToMany(
             targetEntity=Article.class,
-            mappedBy = "collection"
+            mappedBy = "collection",
+            cascade = CascadeType.ALL
     )
     @JsonManagedReference
     Set<Article> articles = new HashSet<>();
-
 }

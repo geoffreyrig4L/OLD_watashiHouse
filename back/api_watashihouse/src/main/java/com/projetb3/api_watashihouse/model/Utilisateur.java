@@ -75,6 +75,3 @@ public class Utilisateur {
     Set<Commande> commandes = new HashSet<>();
 
 }
-
-//FetchMode définit comment Hibernate va récupérer les données
-// FetchType, d'autre part, définit si Hibernate chargera les données avec impatience ou paresseusement.

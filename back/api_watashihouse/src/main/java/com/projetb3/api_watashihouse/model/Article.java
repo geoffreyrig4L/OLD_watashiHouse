@@ -37,13 +37,13 @@ public class Article {
     private String couleur;
 
     @Column(name="prix")
-    private float prix;
+    private int prix;
 
     @Column(name="nb_avis")
     private int nb_avis;
 
     @Column(name="note")
-    private float note;
+    private int note;
 
     @Column(name="stock")
     private int stock;
@@ -60,13 +60,10 @@ public class Article {
     private Set<Categorie> categories = new HashSet<>();
 
     @ManyToOne(
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            },
+            cascade = CascadeType.MERGE,
             targetEntity=Collection.class
     )
-    @JoinColumn(name = "id_collection_article")
+    @JoinColumn(name = "id_collection_article", nullable = false)
     @JsonBackReference
     private Collection collection;
 
