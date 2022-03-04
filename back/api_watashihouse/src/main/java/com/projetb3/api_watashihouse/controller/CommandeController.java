@@ -40,6 +40,9 @@ public class CommandeController {
     @PostMapping
     public ResponseEntity<Void> createCommande(@RequestBody Commande commande) {
         commande.setDate_achat(Commande.now());
+        if(commande.getArticles().isEmpty()){
+            return ResponseEntity.badRequest().build();
+        }
         commandeService.saveCommande(commande);
         return ResponseEntity.ok().build();
     }

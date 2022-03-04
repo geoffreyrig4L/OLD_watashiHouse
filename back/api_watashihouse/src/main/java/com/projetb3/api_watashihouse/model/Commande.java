@@ -3,6 +3,8 @@ package com.projetb3.api_watashihouse.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
@@ -42,10 +44,12 @@ public class Commande {
             cascade = {
                     CascadeType.PERSIST,
                     CascadeType.MERGE
-            }
+            },
+            fetch = FetchType.EAGER
     )
+    @Fetch(FetchMode.SELECT)
     @JoinTable(
-            name="Contenir",
+            name="Article_Commande",
             joinColumns = @JoinColumn(name = "id_commande"),
             inverseJoinColumns = @JoinColumn(name = "id_article")
     )

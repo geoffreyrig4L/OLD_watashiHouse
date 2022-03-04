@@ -24,10 +24,11 @@ public class Collection {
     @Column(name="nom")
     private String nom;
 
-//    @OneToMany(
-//            targetEntity=Article.class
-//    )
-//    @JsonManagedReference
-//    Set<Article> articles = new HashSet<>();
+    @OneToMany(
+            targetEntity=Article.class,
+            mappedBy = "collection"
+    )
+    @JsonManagedReference
+    Set<Article> articles = new HashSet<>();
 
 }
