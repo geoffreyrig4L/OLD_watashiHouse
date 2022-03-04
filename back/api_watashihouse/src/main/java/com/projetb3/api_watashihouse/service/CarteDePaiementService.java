@@ -1,7 +1,6 @@
 package com.projetb3.api_watashihouse.service;
 
 import com.projetb3.api_watashihouse.model.CarteDePaiement;
-import com.projetb3.api_watashihouse.model.Utilisateur;
 import com.projetb3.api_watashihouse.repository.CarteDePaiementRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,17 +38,7 @@ public class CarteDePaiementService {
         carteRepository.deleteById(id);
     }
 
-    public CarteDePaiement saveCarteDePaiement(CarteDePaiement carte){           //creer une instance de la table et genere automatiquement l'id
-        CarteDePaiement savedCarteDePaiement = new CarteDePaiement();
-        System.out.println(carte.getId_utilisateur());
-        Optional<Utilisateur> optional = utilisateurService.getUtilisateur(carte.getId_utilisateur());
-        if(optional.isPresent()){
-            savedCarteDePaiement = carteRepository.save(carte);
-            Utilisateur utilisateur = optional.get();
-            utilisateur.add(carte);
-        } else {
-            log.error("Veuillez assigner un utilisateur à cette carte.");
-        }
-        return savedCarteDePaiement;
+    public void saveCarteDePaiement(CarteDePaiement carte){           //creer une instance de la table et genere automatiquement l'id
+        carteRepository.save(carte);
     }
 }

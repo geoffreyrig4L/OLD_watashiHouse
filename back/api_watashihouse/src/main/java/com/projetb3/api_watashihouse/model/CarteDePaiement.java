@@ -1,8 +1,12 @@
 package com.projetb3.api_watashihouse.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 
 @Getter
@@ -27,6 +31,12 @@ public class CarteDePaiement {
     @Column(name="mois_expiration")
     private String mois_expiration;
 
-    @Column(name="id_utilisateur")
-    private int id_utilisateur;
+    @ManyToOne(
+            cascade = {CascadeType.MERGE,CascadeType.REMOVE},
+            targetEntity=Utilisateur.class
+    )
+    @JoinColumn(name="id_utilisateur")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonBackReference
+    private Utilisateur utilisateur;
 }

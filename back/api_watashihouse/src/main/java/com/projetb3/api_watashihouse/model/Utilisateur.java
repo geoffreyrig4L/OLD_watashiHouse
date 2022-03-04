@@ -1,7 +1,10 @@
 package com.projetb3.api_watashihouse.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -58,18 +61,20 @@ public class Utilisateur {
     @JoinColumn(name = "id_utilisateur")
     Set<Commande> commandes = new HashSet<>();
 
-    //FetchMode définit comment Hibernate va récupérer les données (par sélection, jointure ou sous-sélection). FetchType, d'autre part, définit si Hibernate chargera les données avec impatience ou paresseusement.
+    //FetchMode définit comment Hibernate va récupérer les données
+    // FetchType, d'autre part, définit si Hibernate chargera les données avec impatience ou paresseusement.
 
-    //uni
     @OneToMany(
-            cascade = CascadeType.ALL,
+            targetEntity=CarteDePaiement.class,
+            mappedBy = "utilisateur",
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE,
+                    CascadeType.REMOVE
+            },
             orphanRemoval = true
     )
-    @JoinColumn(name = "id_utilisateur")
-    List<CarteDePaiement> cartesDePaiement = new ArrayList<>();
-
-
-    public void add(CarteDePaiement carte) {
-        cartesDePaiement.add(carte);
-    }
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonManagedReference
+    List<CarteDePaiement> carteDePaiements = new ArrayList<>();
 }
