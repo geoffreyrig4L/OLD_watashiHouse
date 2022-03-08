@@ -14,10 +14,10 @@ public class Categorie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
-    @Column(name="nomCategorie")
-    private String nom;
+    @Column(name="nom_categorie")
+    private String nom_categorie;
 
     @ManyToMany(
             fetch = FetchType.EAGER,

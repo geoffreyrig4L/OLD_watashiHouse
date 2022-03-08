@@ -21,16 +21,16 @@ public class Commande {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name="numero")
     private String numero;
 
-    @Column(name="dateAchat")
-    private String dateAchat;
+    @Column(name="date_achat")
+    private String date_achat;
 
-    @Column(name="prixTot")
-    private int prixTot;
+    @Column(name="prix_tot")
+    private int prix_tot;
 
     @ManyToOne(
             cascade = CascadeType.MERGE,
@@ -57,11 +57,11 @@ public class Commande {
         return formatter.format(date);
     }
 
-    public void addAll(List<Article> articles){
-        articles.addAll(articles);
-    }
-
-    public void remove(Article article){
-        articles.remove(article);
-    }
+//    public void addAll(List<Article> articles){
+//        articles.addAll(articles);
+//    }
+//
+//    public void remove(Article article){
+//        articles.remove(article);
+//    }
 }

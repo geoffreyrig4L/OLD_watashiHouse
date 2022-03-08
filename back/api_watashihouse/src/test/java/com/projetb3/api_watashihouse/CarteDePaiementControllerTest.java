@@ -34,20 +34,20 @@ public class CarteDePaiementControllerTest implements H2TestJpaConfig {
         CarteDePaiement carteDePaiement = new CarteDePaiement();
         carteDePaiement.setNumero("4973556787121109");
         carteDePaiement.setCvc("659");
-        carteDePaiement.setAnneeExpiration("25");
-        carteDePaiement.setMoisExpiration("12");
+        carteDePaiement.setAnnee_expiration("25");
+        carteDePaiement.setMois_expiration("12");
         carteDePaiementRepository.save(carteDePaiement);
         CarteDePaiement carteDePaiement2 = new CarteDePaiement();
         carteDePaiement2.setNumero("4973231467874433");
         carteDePaiement2.setCvc("098");
-        carteDePaiement2.setAnneeExpiration("24");
-        carteDePaiement2.setMoisExpiration("10");
+        carteDePaiement2.setAnnee_expiration("24");
+        carteDePaiement2.setMois_expiration("10");
         carteDePaiementRepository.save(carteDePaiement2);
         CarteDePaiement carteDePaiement3 = new CarteDePaiement();
         carteDePaiement3.setNumero("4677088731314765");
         carteDePaiement3.setCvc("236");
-        carteDePaiement3.setAnneeExpiration("23");
-        carteDePaiement3.setMoisExpiration("01");
+        carteDePaiement3.setAnnee_expiration("23");
+        carteDePaiement3.setMois_expiration("01");
         carteDePaiementRepository.save(carteDePaiement3);
     }
 

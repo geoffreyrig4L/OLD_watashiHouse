@@ -64,7 +64,7 @@ public class ArticleController {
             String images = article.getImages();
             String couleur = article.getCouleur();
             int prix = article.getPrix();
-            int nbAvis = article.getNbAvis();
+            int nb_avis = article.getNb_avis();
             int note = article.getNote();
             int stock = article.getStock();
             if (nom != null) {
@@ -82,8 +82,8 @@ public class ArticleController {
             if (prix != 0) {
                 currentArticle.setPrix(prix);
             }
-            if (nbAvis != 0) {
-                currentArticle.setNbAvis(nbAvis);
+            if (nb_avis != 0) {
+                currentArticle.setNb_avis(nb_avis);
             }
             if (note != 0) {
                 currentArticle.setNote(note);

@@ -65,10 +65,10 @@ public class CategorieController {
             Categorie currentCategorie = optCategorie.get();
 
             //recupere les variables du categorie fourni en parametre pour les manipuler
-            String nom = categorie.getNom();
+            String nom = categorie.getNom_categorie();
 
             if (nom != null) {
-                currentCategorie.setNom(nom);
+                currentCategorie.setNom_categorie(nom);
             }
             categorieService.saveCategorie(currentCategorie);
             return ResponseEntity.ok().build();

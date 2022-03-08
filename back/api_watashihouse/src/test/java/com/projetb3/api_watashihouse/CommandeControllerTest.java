@@ -42,22 +42,22 @@ public class CommandeControllerTest implements H2TestJpaConfig {
         commande.setNumero("1234567890");
         LocalDateTime date = LocalDateTime.now();
         String strDate = formatter.format(date);
-        commande.setDateAchat(strDate);
-        commande.setPrixTot(2000);
+        commande.setDate_achat(strDate);
+        commande.setPrix_tot(2000);
         commandeRepository.save(commande);
         Commande commande2 = new Commande();
         commande2.setNumero("0987654321");
         LocalDateTime date2 = LocalDateTime.now();
         String strDate2 = formatter.format(date2);
-        commande2.setDateAchat(strDate2);
-        commande2.setPrixTot(3000);
+        commande2.setDate_achat(strDate2);
+        commande2.setPrix_tot(3000);
         commandeRepository.save(commande2);
         Commande commande3 = new Commande();
         commande3.setNumero("1114447770");
         LocalDateTime date3 = LocalDateTime.now();
         String strDate3 = formatter.format(date3);
-        commande3.setDateAchat(strDate3);
-        commande3.setPrixTot(4000);
+        commande3.setDate_achat(strDate3);
+        commande3.setPrix_tot(4000);
         commandeRepository.save(commande3);
     }
 

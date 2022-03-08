@@ -41,20 +41,15 @@ public class CommandeController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> createCommande(@RequestBody Commande commande) {
-        for (Article article : commande.getArticles()) {
-            System.out.println(article.getNom() + " - " + article.getPrix());
-        }
-        commande.setDateAchat(Commande.now());
-        commande.addAll(commande.getArticles());
+    public ResponseEntity<String> createCommande(@RequestBody Commande commande) {
+        commande.setDate_achat(Commande.now());
         int total = getPrixTot(commande.getArticles());
-        commande.setPrixTot(total);
-        System.out.println(commande.getPrixTot() + " - " + total);
-        if(commande.getArticles().isEmpty()){
-            return ResponseEntity.badRequest().build();
+        commande.setPrix_tot(total);
+        if(commande.getArticles().isEmpty() || commande.getUtilisateur().getId() == null){
+            return ResponseEntity.badRequest().body("Veuillez entrer une requete valide.");
         }
         commandeService.saveCommande(commande);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok().body("Creation de la commande reussie !");
     }
 
     private int getPrixTot(List<Article> articles) {
@@ -83,17 +78,17 @@ public class CommandeController {
         if (optCommande.isPresent()) {
             Commande currentCommande = optCommande.get();
             String numero = commande.getNumero();
-            String date = commande.getDateAchat();
-            int prixTot = commande.getPrixTot();
+            String date = commande.getDate_achat();
+            int prix_tot = commande.getPrix_tot();
 
             if (numero != null) {
                 currentCommande.setNumero(numero);
             }
-            if (prixTot != 0) {
-                currentCommande.setPrixTot(prixTot);
+            if (prix_tot != 0) {
+                currentCommande.setPrix_tot(prix_tot);
             }
             if (date != null) {
-                currentCommande.setDateAchat(date);
+                currentCommande.setDate_achat(date);
             }
             commandeService.saveCommande(currentCommande);
             return ResponseEntity.ok().build();

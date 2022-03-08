@@ -14,7 +14,7 @@ public class CarteDePaiement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name="numero")
     private String numero;
@@ -22,11 +22,11 @@ public class CarteDePaiement {
     @Column(name="cvc")
     private String cvc;
 
-    @Column(name="anneeExpiration")
-    private String anneeExpiration;
+    @Column(name="annee_expiration")
+    private String annee_expiration;
 
-    @Column(name="moisExpiration")
-    private String moisExpiration;
+    @Column(name="mois_expiration")
+    private String mois_expiration;
 
     @ManyToOne(
             cascade = CascadeType.MERGE,

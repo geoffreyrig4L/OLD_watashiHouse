@@ -21,7 +21,7 @@ public class Article {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name="nom")
     private String nom;
@@ -39,8 +39,8 @@ public class Article {
     @Column(name="prix")
     private int prix;
 
-    @Column(name="nbAvis")
-    private int nbAvis;
+    @Column(name="nb_avis")
+    private int nb_avis;
 
     @Column(name="note")
     private int note;

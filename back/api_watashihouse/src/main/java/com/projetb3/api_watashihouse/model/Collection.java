@@ -19,10 +19,10 @@ public class Collection {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
-    @Column(name="nomCollection")
-    private String nom;
+    @Column(name="nom_collection")
+    private String nom_collection;
 
     @OneToMany(
             targetEntity=Article.class,

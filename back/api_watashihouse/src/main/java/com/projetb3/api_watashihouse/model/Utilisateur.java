@@ -22,7 +22,7 @@ public class Utilisateur {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "civilite")
     private String civilite;
@@ -42,17 +42,17 @@ public class Utilisateur {
     @Column(name = "tel")
     private String tel;
 
-    @Column(name = "adresseLivraison")
-    private String adresseLivraison;
+    @Column(name = "adresse_livraison")
+    private String adresse_livraison;
 
-    @Column(name = "adresseFacturation")
-    private String adresseFacturation;
+    @Column(name = "adresse_facturation")
+    private String adresse_facturation;
 
     @Column(name = "pays")
     private String pays;
 
-    @Column(name = "typeUser")
-    private String typeUser;
+    @Column(name = "type_user")
+    private String type_user;
 
     @OneToMany(
             targetEntity=CarteDePaiement.class,
