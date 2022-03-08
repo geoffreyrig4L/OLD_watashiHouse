@@ -37,7 +37,7 @@ public class ArticleControllerTest implements H2TestJpaConfig {
         article.setImages("images/chaise.png");
         article.setCouleur("rouge");
         article.setPrix(2999);
-        article.setNb_avis(75);
+        article.setNbAvis(75);
         article.setNote(42);
         article.setStock(45);
         articleRepository.save(article);
@@ -47,7 +47,7 @@ public class ArticleControllerTest implements H2TestJpaConfig {
         article2.setImages("images/table.png");
         article2.setCouleur("marron");
         article2.setPrix(6999);
-        article2.setNb_avis(100);
+        article2.setNbAvis(100);
         article2.setNote(44);
         article2.setStock(26);
         articleRepository.save(article2);
@@ -57,7 +57,7 @@ public class ArticleControllerTest implements H2TestJpaConfig {
         article3.setImages("images/bureau.png");
         article3.setCouleur("chêne");
         article3.setPrix(9999);
-        article3.setNb_avis(92);
+        article3.setNbAvis(92);
         article3.setNote(39);
         article3.setStock(39);
         articleRepository.save(article3);

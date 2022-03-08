@@ -21,7 +21,7 @@ public class Collection {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="nom_collection")
+    @Column(name="nomCollection")
     private String nom;
 
     @OneToMany(

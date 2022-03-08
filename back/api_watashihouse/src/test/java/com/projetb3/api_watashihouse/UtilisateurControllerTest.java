@@ -38,8 +38,8 @@ public class UtilisateurControllerTest implements H2TestJpaConfig {
         utilisateur.setEmail("olivia.hamer@gmail.com");
         utilisateur.setMdp("ohamer");
         utilisateur.setTel("0601010101");
-        utilisateur.setAdresse_livraison("31 rue de Victor Hugo 95210 Argenteuil");
-        utilisateur.setAdresse_facturation("31 rue de Victor Hugo 95210 Argenteuil");
+        utilisateur.setAdresseLivraison("31 rue de Victor Hugo 95210 Argenteuil");
+        utilisateur.setAdresseFacturation("31 rue de Victor Hugo 95210 Argenteuil");
         utilisateur.setPays("France");
         utilisateurRepository.save(utilisateur);
         Utilisateur utilisateur2 = new Utilisateur();
@@ -49,8 +49,8 @@ public class UtilisateurControllerTest implements H2TestJpaConfig {
         utilisateur2.setEmail("talia.zhao@gmail.com");
         utilisateur2.setMdp("tzao");
         utilisateur2.setTel("0602020202");
-        utilisateur2.setAdresse_livraison("42 avenue du général de Gaulle 93421 Pantin");
-        utilisateur2.setAdresse_facturation("42 avenue du général de Gaulle 93421 Pantin");
+        utilisateur2.setAdresseLivraison("42 avenue du général de Gaulle 93421 Pantin");
+        utilisateur2.setAdresseFacturation("42 avenue du général de Gaulle 93421 Pantin");
         utilisateur2.setPays("France");
         utilisateurRepository.save(utilisateur2);
         Utilisateur utilisateur10 = new Utilisateur();
@@ -60,8 +60,8 @@ public class UtilisateurControllerTest implements H2TestJpaConfig {
         utilisateur10.setEmail("helio.pinto@gmail.com");
         utilisateur10.setMdp("hpinto");
         utilisateur10.setTel("0603030303");
-        utilisateur10.setAdresse_livraison("45 rue de Marie Curie 77231 Meaux");
-        utilisateur10.setAdresse_facturation("45 rue de Marie Curie 77231 Meaux");
+        utilisateur10.setAdresseLivraison("45 rue de Marie Curie 77231 Meaux");
+        utilisateur10.setAdresseFacturation("45 rue de Marie Curie 77231 Meaux");
         utilisateur10.setPays("France");
         utilisateurRepository.save(utilisateur10);
     }

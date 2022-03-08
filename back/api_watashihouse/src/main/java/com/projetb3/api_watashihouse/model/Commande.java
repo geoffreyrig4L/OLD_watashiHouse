@@ -26,11 +26,11 @@ public class Commande {
     @Column(name="numero")
     private String numero;
 
-    @Column(name="date_achat")
-    private String date_achat;
+    @Column(name="dateAchat")
+    private String dateAchat;
 
-    @Column(name="prix_tot")
-    private int prix_tot;
+    @Column(name="prixTot")
+    private int prixTot;
 
     @ManyToOne(
             cascade = CascadeType.MERGE,
@@ -41,13 +41,9 @@ public class Commande {
     private Utilisateur utilisateur;
 
     @ManyToMany(
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            },
+            cascade = CascadeType.MERGE,
             fetch = FetchType.EAGER
     )
-    @Fetch(FetchMode.SELECT)
     @JoinTable(
             name="Article_Commande",
             joinColumns = @JoinColumn(name = "id_commande"),
@@ -59,5 +55,13 @@ public class Commande {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         LocalDateTime date = LocalDateTime.now();
         return formatter.format(date);
+    }
+
+    public void addAll(List<Article> articles){
+        articles.addAll(articles);
+    }
+
+    public void remove(Article article){
+        articles.remove(article);
     }
 }

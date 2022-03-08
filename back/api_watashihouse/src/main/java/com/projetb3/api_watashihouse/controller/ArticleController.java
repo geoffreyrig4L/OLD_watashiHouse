@@ -36,6 +36,9 @@ public class ArticleController {
 
     @PostMapping
     public ResponseEntity<Void> createArticle(@RequestBody Article article) {
+        if(article.getCategories().isEmpty()){
+            return ResponseEntity.ok().build();
+        }
         articleService.saveArticle(article);
         return ResponseEntity.ok().build();
     }
@@ -61,7 +64,7 @@ public class ArticleController {
             String images = article.getImages();
             String couleur = article.getCouleur();
             int prix = article.getPrix();
-            int nb_avis = article.getNb_avis();
+            int nbAvis = article.getNbAvis();
             int note = article.getNote();
             int stock = article.getStock();
             if (nom != null) {
@@ -79,8 +82,8 @@ public class ArticleController {
             if (prix != 0) {
                 currentArticle.setPrix(prix);
             }
-            if (nb_avis != 0) {
-                currentArticle.setNb_avis(nb_avis);
+            if (nbAvis != 0) {
+                currentArticle.setNbAvis(nbAvis);
             }
             if (note != 0) {
                 currentArticle.setNote(note);

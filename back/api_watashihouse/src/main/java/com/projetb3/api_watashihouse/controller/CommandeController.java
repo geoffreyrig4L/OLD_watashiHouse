@@ -1,5 +1,6 @@
 package com.projetb3.api_watashihouse.controller;
 
+import com.projetb3.api_watashihouse.model.Article;
 import com.projetb3.api_watashihouse.model.Commande;
 import com.projetb3.api_watashihouse.service.CommandeService;
 import org.springframework.data.domain.Page;
@@ -7,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -39,7 +42,14 @@ public class CommandeController {
 
     @PostMapping
     public ResponseEntity<Void> createCommande(@RequestBody Commande commande) {
-        commande.setDate_achat(Commande.now());
+        for (Article article : commande.getArticles()) {
+            System.out.println(article.getNom() + " - " + article.getPrix());
+        }
+        commande.setDateAchat(Commande.now());
+        commande.addAll(commande.getArticles());
+        int total = getPrixTot(commande.getArticles());
+        commande.setPrixTot(total);
+        System.out.println(commande.getPrixTot() + " - " + total);
         if(commande.getArticles().isEmpty()){
             return ResponseEntity.badRequest().build();
         }
@@ -47,10 +57,19 @@ public class CommandeController {
         return ResponseEntity.ok().build();
     }
 
+    private int getPrixTot(List<Article> articles) {
+        List<Integer> listePrix = new ArrayList<>();
+        for (Article article : articles) {
+            listePrix.add(article.getPrix());
+        }
+        Optional<Integer> prixTot = listePrix.stream().reduce(Integer::sum);
+        return prixTot.orElse(0);
+    }
+
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCommande(@PathVariable("id") final int id) {  //void sgnifie qu'il n'y a aucun objet dans le body
         Optional<Commande> optCommande = commandeService.getCommande(id);  //Optional -> encapsule un objet dont la valeur peut être null
-
         if (optCommande.isPresent()){
             commandeService.deleteCommande(id);
             return ResponseEntity.ok().build();
@@ -64,17 +83,17 @@ public class CommandeController {
         if (optCommande.isPresent()) {
             Commande currentCommande = optCommande.get();
             String numero = commande.getNumero();
-            String date = commande.getDate_achat();
-            int prix_tot = commande.getPrix_tot();
+            String date = commande.getDateAchat();
+            int prixTot = commande.getPrixTot();
 
             if (numero != null) {
                 currentCommande.setNumero(numero);
             }
-            if (prix_tot != 0) {
-                currentCommande.setPrix_tot(prix_tot);
+            if (prixTot != 0) {
+                currentCommande.setPrixTot(prixTot);
             }
             if (date != null) {
-                currentCommande.setDate_achat(date);
+                currentCommande.setDateAchat(date);
             }
             commandeService.saveCommande(currentCommande);
             return ResponseEntity.ok().build();

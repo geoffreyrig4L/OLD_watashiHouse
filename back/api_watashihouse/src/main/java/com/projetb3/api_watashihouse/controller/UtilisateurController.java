@@ -70,10 +70,10 @@ public class UtilisateurController {
             String email = utilisateur.getEmail();
             String mdp = utilisateur.getMdp();
             String tel = utilisateur.getTel();
-            String adresse_livraison = utilisateur.getAdresse_livraison();
-            String adresse_facturation = utilisateur.getAdresse_facturation();
+            String adresseLivraison = utilisateur.getAdresseLivraison();
+            String adresseFacturation = utilisateur.getAdresseFacturation();
             String pays = utilisateur.getPays();
-            String type_user = utilisateur.getType_user();
+            String typeUser = utilisateur.getTypeUser();
             if (newId != 0) {
                 currentUtilisateur.setId(newId);
             }
@@ -95,17 +95,17 @@ public class UtilisateurController {
             if (tel != null) {
                 currentUtilisateur.setTel(tel);
             }
-            if(adresse_livraison!= null) {
-                currentUtilisateur.setAdresse_livraison(adresse_livraison);
+            if(adresseLivraison != null) {
+                currentUtilisateur.setAdresseLivraison(adresseLivraison);
             }
-            if (adresse_facturation != null) {
-                currentUtilisateur.setAdresse_facturation(adresse_facturation);
+            if (adresseFacturation != null) {
+                currentUtilisateur.setAdresseFacturation(adresseFacturation);
             }
             if (pays != null) {
                 currentUtilisateur.setPays(pays);
             }
-            if (type_user != null) {
-                currentUtilisateur.setType_user(type_user);
+            if (typeUser != null) {
+                currentUtilisateur.setTypeUser(typeUser);
             }
 
             utilisateurService.saveUtilisateur(currentUtilisateur);

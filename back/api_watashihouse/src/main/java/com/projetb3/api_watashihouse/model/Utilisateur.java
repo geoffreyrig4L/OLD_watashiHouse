@@ -42,17 +42,17 @@ public class Utilisateur {
     @Column(name = "tel")
     private String tel;
 
-    @Column(name = "adresse_livraison")
-    private String adresse_livraison;
+    @Column(name = "adresseLivraison")
+    private String adresseLivraison;
 
-    @Column(name = "adresse_facturation")
-    private String adresse_facturation;
+    @Column(name = "adresseFacturation")
+    private String adresseFacturation;
 
     @Column(name = "pays")
     private String pays;
 
-    @Column(name = "type_user")
-    private String type_user;
+    @Column(name = "typeUser")
+    private String typeUser;
 
     @OneToMany(
             targetEntity=CarteDePaiement.class,

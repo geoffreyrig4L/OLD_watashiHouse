@@ -39,8 +39,8 @@ public class Article {
     @Column(name="prix")
     private int prix;
 
-    @Column(name="nb_avis")
-    private int nb_avis;
+    @Column(name="nbAvis")
+    private int nbAvis;
 
     @Column(name="note")
     private int note;
@@ -50,10 +50,7 @@ public class Article {
 
     @ManyToMany(
             mappedBy = "articles",
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            },
+            cascade = CascadeType.MERGE,
             targetEntity = Categorie.class
     )
     @JsonIgnore
@@ -63,7 +60,7 @@ public class Article {
             cascade = CascadeType.MERGE,
             targetEntity=Collection.class
     )
-    @JoinColumn(name = "id_collection_article", nullable = false)
+    @JoinColumn(name = "id_collection_article")
     @JsonBackReference
     private Collection collection;
 
