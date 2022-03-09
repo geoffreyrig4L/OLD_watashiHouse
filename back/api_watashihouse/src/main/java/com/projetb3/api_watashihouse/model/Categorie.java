@@ -16,14 +16,15 @@ public class Categorie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name="nom_categorie")
-    private String nom_categorie;
+    @Column(name="nom")
+    private String nom;
 
     @ManyToMany(
             fetch = FetchType.EAGER,
             cascade = {
                     CascadeType.PERSIST,
                     CascadeType.MERGE
+                    //,CascadeType.REMOVE //pour supprimer les articles si on supprime la categorie
             },
             targetEntity=Article.class
     )

@@ -32,13 +32,13 @@ public class CategorieControllerTest implements H2TestJpaConfig {
     void insertInH2(){
         //les id sont generes automatiquements meme si on les modifies avec @GeneratedValue
         Categorie categorie = new Categorie();
-        categorie.setNom_categorie("table");
+        categorie.setNom("table");
         categorieRepository.save(categorie);
         Categorie categorie2 = new Categorie();
-        categorie2.setNom_categorie("chaise");
+        categorie2.setNom("chaise");
         categorieRepository.save(categorie2);
         Categorie categorie3 = new Categorie();
-        categorie3.setNom_categorie("bureau");
+        categorie3.setNom("bureau");
         categorieRepository.save(categorie3);
     }
 

@@ -32,13 +32,13 @@ public class CollectionControllerTest implements H2TestJpaConfig {
     void insertInH2(){
         //les id sont generes automatiquements meme si on les modifies avec @GeneratedValue
         Collection collection = new Collection();
-        collection.setNom_collection("WatSakura no hana");
+        collection.setNom("WatSakura no hana");
         collectionRepository.save(collection);
         Collection collection2 = new Collection();
-        collection2.setNom_collection("Hoken");
+        collection2.setNom("Hoken");
         collectionRepository.save(collection2);
         Collection collection3 = new Collection();
-        collection3.setNom_collection("Collection 3");
+        collection3.setNom("Collection 3");
         collectionRepository.save(collection3);
     }
 

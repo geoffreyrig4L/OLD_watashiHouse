@@ -67,10 +67,10 @@ public class CollectionController {
             Collection currentCollection = optCollection.get();
 
             //recupere les variables du collection fourni en parametre pour les manipuler
-            String nom = collection.getNom_collection();
+            String nom = collection.getNom();
 
             if (nom != null) {
-                currentCollection.setNom_collection(nom);
+                currentCollection.setNom(nom);
             }
             collectionService.saveCollection(currentCollection);
             return ResponseEntity.ok().build();

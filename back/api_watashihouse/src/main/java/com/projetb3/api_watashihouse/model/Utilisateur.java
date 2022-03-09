@@ -60,7 +60,6 @@ public class Utilisateur {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonManagedReference
     Set<CarteDePaiement> carteDePaiements = new HashSet<>();
 
@@ -70,7 +69,6 @@ public class Utilisateur {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonManagedReference
     Set<Commande> commandes = new HashSet<>();
 

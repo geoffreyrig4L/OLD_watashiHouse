@@ -21,8 +21,8 @@ public class CategorieController {
 
     @GetMapping
     public ResponseEntity<Page<Categorie>> getAllCategoriesToWatch(@RequestParam("page") final Optional<Integer> page, @RequestParam("sortBy") final Optional<String> sortBy) {
-        Page<Categorie> categorieList = categorieService.getAllCategories(page, sortBy);
-        return ResponseEntity.ok(categorieList);
+        Page<Categorie> listeCategorie = categorieService.getAllCategories(page, sortBy);
+        return ResponseEntity.ok(listeCategorie);
     }
 
     /*
@@ -65,10 +65,10 @@ public class CategorieController {
             Categorie currentCategorie = optCategorie.get();
 
             //recupere les variables du categorie fourni en parametre pour les manipuler
-            String nom = categorie.getNom_categorie();
+            String nom = categorie.getNom();
 
             if (nom != null) {
-                currentCategorie.setNom_categorie(nom);
+                currentCategorie.setNom(nom);
             }
             categorieService.saveCategorie(currentCategorie);
             return ResponseEntity.ok().build();

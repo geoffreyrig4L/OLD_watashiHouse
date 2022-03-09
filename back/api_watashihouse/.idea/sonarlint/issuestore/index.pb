@@ -19,8 +19,6 @@ Qsrc/main/java/com/projetb3/api_watashihouse/repository/UtilisateurRepository.ja
 Osrc/main/java/com/projetb3/api_watashihouse/repository/CategorieRepository.java,e\4\e40bfea0b093a5245cada9a7e47e6ae1aecf313c
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-y
-Isrc/main/java/com/projetb3/api_watashihouse/service/CategorieService.java,d\8\d8231357f45b91ab42aea1099d386d83a15332d6
 {
 Ksrc/main/java/com/projetb3/api_watashihouse/service/UtilisateurService.java,8\b\8bb8a9c091583dd3fe690cdd72872b167d1fe647
 z

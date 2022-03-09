@@ -14,18 +14,18 @@ import java.util.*;
 @Entity
 @Getter
 @Setter
-@Table(name="Collection")
+@Table(name = "Collection")
 public class Collection {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name="nom_collection")
-    private String nom_collection;
+    @Column(name = "nom")
+    private String nom;
 
     @OneToMany(
-            targetEntity=Article.class,
+            targetEntity = Article.class,
             mappedBy = "collection",
             cascade = CascadeType.ALL
     )
